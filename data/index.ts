@@ -2,9 +2,9 @@ import { Github, Linkedin, Mail } from "lucide-react";
 
 const data = {
   home: {
-    name: "Aga Kadela",
+    name: "Myo Myo Khant",
     description:
-      "I Fix, Optimize & Build #Next_js & #React Apps - Powered by #AI", // # -> for css style, _ -> create space, __ -> creates dash
+      "I Build, Optimize & Scale #AI_Powered_Software & #Backend_Systems",
     cvLink: "#contact",
   },
   sidebar: {
@@ -21,7 +21,16 @@ const data = {
       }
     ],
   },
-
+  about: {
+    description:
+      "🚀 Software Engineer | AI Developer | Backend Specialist",
+    image: "/img/about-image.jpg",
+    skills: [
+        {id:1, text:"I solve real problems—whether it’s fixing broken systems, optimizing performance, or building AI-driven features."},
+        {id:2, text:"Fast, efficient, and scalable solutions—no unnecessary complexity, just clean and maintainable code."},
+         {id:3, text: "Industry-wide experience—from telecom to AI, startups to enterprises, I deliver results that matter."}
+    ],
+  },
   projects: {
     projects: [
       {

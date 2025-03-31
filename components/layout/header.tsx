@@ -42,8 +42,8 @@ const navItems = [
     const {hash}= useHash();
     return(
         <div className="w-full h-12 border-b bg-muted flex items-center">
-            <div className="w-30 pl-5 pr-5 flex items-center ">
-              <Image src="/img/fav.svg" alt="Varie Logo" width={30} height={30} className="object-contain"/>
+            <div className="w-14 flex items-center justify-center flex-shrink-0 font-bold">
+              <Image src="/img/fav.svg" alt="Varie Logo" width={26} height={26} className="object-contain"/>
             </div>
             <div className="flex item-center size-full">
               {navItems.map((item)=>{
