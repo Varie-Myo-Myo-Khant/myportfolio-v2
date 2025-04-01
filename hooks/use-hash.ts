@@ -3,7 +3,11 @@ import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 
 export default function useHash() {
-  const [hash, setHash] = useState<string>(window.location.hash);
+  // ✅ Initialize state safely to avoid "window is not defined" error
+  const [hash, setHash] = useState<string>(() => 
+    typeof window !== "undefined" ? window.location.hash : ""
+  );
+
   const router = useRouter();
   const pathname = usePathname();
 
@@ -12,23 +16,29 @@ export default function useHash() {
       setHash(window.location.hash);
     };
 
-    // Listen for hash changes
-    window.addEventListener("hashchange", handleHashChange);
+    if (typeof window !== "undefined") {
+      // ✅ Only add event listener in the browser
+      window.addEventListener("hashchange", handleHashChange);
+    }
 
-    // Cleanup on unmount
     return () => {
-      window.removeEventListener("hashchange", handleHashChange);
+      if (typeof window !== "undefined") {
+        window.removeEventListener("hashchange", handleHashChange);
+      }
     };
   }, []);
 
-  // Ensure hash updates correctly when the pathname changes
   useEffect(() => {
-    setHash(window.location.hash);
+    if (typeof window !== "undefined") {
+      setHash(window.location.hash);
+    }
   }, [pathname]);
 
   const updateHash = (newHash: string) => {
-    router.push(`#${newHash}`, { scroll: false }); // Update hash without full reload
-    setHash(`#${newHash}`); // Manually update state
+    if (typeof window !== "undefined") {
+      router.push(`#${newHash}`, { scroll: false });
+      setHash(`#${newHash}`);
+    }
   };
 
   return { hash, updateHash };
