@@ -18,12 +18,6 @@ const navItems = [
       icon: User,
     },
     {
-        id: 3,
-        name: "Experiences.tsx",
-        path: "#projects",
-        icon: AppWindowMac,
-      },
-    {
       id: 4,
       name: "Projects.tsx",
       path: "#projects",
@@ -39,7 +33,7 @@ const navItems = [
   ];
 
   export default function Header(){
-    const {hash}= useHash();
+    const {hash,updateHash}= useHash();
     return(
         <div className="w-full h-12 border-b bg-muted flex items-center">
             <div className="w-14 flex items-center justify-center flex-shrink-0 font-bold">
@@ -49,7 +43,14 @@ const navItems = [
               {navItems.map((item)=>{
                 const isActive= item.path===hash || (item.path ==="#home" && hash==="");
                 return(
-                  <Link key={item.id} href={item.path} scroll className={cn("relative h-full w-fit md:min-w-40 border-x flex items-center justify-start gap-2 text-muted-foreground hover:bg-background px-4", isActive && "text-foreground bg-background hover:bg-background", item.isRight && "ml-auto")}>
+                  <Link key={item.id} href={item.path} scroll 
+                  onClick={() => updateHash(item.path.substring(1))}
+                  className={cn(
+                    "relative h-full w-fit md:min-w-40 border-x flex items-center justify-start gap-2 text-muted-foreground px-4",
+                    "hover:bg-muted transition-colors duration-200 ease-in-out",
+                    isActive && "text-foreground bg-background",
+                    item.isRight && "ml-auto"
+                  )}>
                   <item.icon size={14} className="text-primary-foreground" />
                   <span className="hidden md:inline">{item.name}</span> {isActive && <BorderActive />}
                 </Link>
