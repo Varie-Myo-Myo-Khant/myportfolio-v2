@@ -1,3 +1,4 @@
+"use client";
 import LoadingScreen from "@/components/sections/loading-creen";
 import HomeSection from "@/components/sections/home";
 import ContactSection from "@/components/sections/contact";

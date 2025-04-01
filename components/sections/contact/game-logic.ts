@@ -1,5 +1,3 @@
-// game logic
-
 type Snake = {
     x: number;
     y: number;
@@ -26,6 +24,7 @@ type Snake = {
     let count = 0;
     let score = 0;
     let max = 0;
+    let isRunning = true;
   
     snake = {
       x: Math.floor(gridWidth / 2),
@@ -35,6 +34,7 @@ type Snake = {
       maxCells: 1,
       cells: [],
     };
+  
     const food = {
       x: 0,
       y: 0,
@@ -48,10 +48,14 @@ type Snake = {
     placeFood();
   
     function loop() {
+      if (!isRunning) return;
+  
       requestAnimationFrame(loop);
+  
       if (++count < 7) {
         return;
       }
+  
       count = 0;
       context.clearRect(0, 0, canvas.width, canvas.height);
   
@@ -85,7 +89,7 @@ type Snake = {
   
       // Draw snake
       context.fillStyle = "#EC1063";
-      snake.cells.forEach(function (cell, index) {
+      snake.cells.forEach((cell, index) => {
         context.fillRect(cell.x * gridSize, cell.y * gridSize, gridSize - 1, gridSize - 1);
   
         // Snake ate food
@@ -101,7 +105,12 @@ type Snake = {
             if (score > max) {
               max = score;
             }
-            // handle lose
+  
+            // Handle game over
+            isRunning = false;
+            if (typeof window !== "undefined") {
+              document.removeEventListener("keydown", keyPressed);
+            }
             onGameChange();
             return;
           }
@@ -109,14 +118,17 @@ type Snake = {
       });
     }
   
-    document.addEventListener("keydown", keyPressed);
+    if (typeof window !== "undefined") {
+      document.addEventListener("keydown", keyPressed);
+    }
   
     requestAnimationFrame(loop);
   };
   
   export const keyPressed = (e: KeyboardEvent) => {
-    e.preventDefault();
-    console.log(e.key);
+    if (["ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown"].includes(e.key)) {
+      e.preventDefault();
+    }
   
     if (e.key === "ArrowLeft" && snake.dx === 0) {
       snake.dx = -1;

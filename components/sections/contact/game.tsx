@@ -5,21 +5,31 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { keyPressed, startGame } from "./game-logic";
 
-type props = {
+type Props = {
   turnsLeft: number;
   setTurnsLeft: Dispatch<SetStateAction<number>>;
 };
 
-export default function Game({ turnsLeft, setTurnsLeft }: props) {
+export default function Game({ turnsLeft, setTurnsLeft }: Props) {
   const ref = useRef<HTMLCanvasElement | null>(null);
   const [isStart, setIsStart] = useState(false);
-  const defaultGameTimerValue = 60 * 0.5; // seconds
+  const defaultGameTimerValue = 60 * 0.5; // 30 seconds
   const [gameTimer, setGameTimer] = useState(defaultGameTimerValue);
+
+  // Store key event in useRef to prevent stale closures
+  const keyPressedRef = useRef(keyPressed);
+
+  useEffect(() => {
+    keyPressedRef.current = keyPressed;
+  }, [keyPressed]);
 
   const onGameChange = useCallback(() => {
     setIsStart(false);
     setTurnsLeft((curTurns) => curTurns - 1);
-    document.removeEventListener("keydown", keyPressed);
+
+    if (typeof window !== "undefined") {
+      document.removeEventListener("keydown", keyPressedRef.current);
+    }
   }, [setTurnsLeft]);
 
   useEffect(() => {
@@ -27,6 +37,14 @@ export default function Game({ turnsLeft, setTurnsLeft }: props) {
       startGame(ref.current, onGameChange);
     }
   }, [isStart, onGameChange]);
+
+  useEffect(() => {
+    if (isStart && typeof window !== "undefined") {
+      const handler = (e: KeyboardEvent) => keyPressedRef.current(e);
+      document.addEventListener("keydown", handler);
+      return () => document.removeEventListener("keydown", handler);
+    }
+  }, [isStart]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -43,7 +61,7 @@ export default function Game({ turnsLeft, setTurnsLeft }: props) {
     return () => clearInterval(interval);
   }, [isStart, onGameChange]);
 
-  if (turnsLeft === 0) return;
+  if (turnsLeft === 0) return null;
 
   return (
     <div className="relative flex flex-col bg-muted rounded-md p-2 size-64">
@@ -73,21 +91,6 @@ export default function Game({ turnsLeft, setTurnsLeft }: props) {
             >
               Play a Game
             </Button>
-            {/*             <Button className="shadow-md rounded-full" size="lg" variant="outline" onClick={() => router.push("#contact")}>
-              Contact Me
-            </Button>
-            <span className="text-secondary font-bold text-sm">OR</span>
-            <Button
-              size="sm"
-              className=" text-gray-500 text-xs h-fit"
-              variant="link"
-              onClick={() => {
-                setIsStart(true);
-                setGameTimer(defaultGameTimerValue);
-              }}
-            >
-              {`//`} Play a Game
-            </Button> */}
           </div>
           <div className="absolute size-2 right-20 top-8 bg-rose-600" />
           <div className="absolute w-2 h-12 right-14 bottom-9 bg-emerald-600" />

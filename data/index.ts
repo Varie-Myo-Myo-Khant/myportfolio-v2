@@ -2,7 +2,7 @@ import { Github, Linkedin, Mail } from "lucide-react";
 
 const data = {
   home: {
-    name: "Myo Myo Khant",
+    name: "Myo Myo Khant (Varie)",
     description:
       "I Build, Optimize & Scale #AI_Powered_Software & #Backend_Systems",
     cvLink: "#contact",
