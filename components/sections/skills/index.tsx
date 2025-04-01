@@ -6,14 +6,14 @@ import { useRef } from "react";
 import useCurSection from "@/hooks/use-cur-section";
 import data from "@/data";
 
-export default function Technologies() {
+export default function Skills() {
   const ref = useRef(null);
   useCurSection(ref);
   return (
-    <div ref={ref} className="flex gap-4 items-center flex-col justify-center bg-muted w-full py-12 my-12 overflow-hidden">
+    <div ref={ref} id="skills" className="flex gap-4 items-center flex-col justify-center bg-muted w-full  overflow-hidden">
       <h1 className="text-center text-3xl md:text-5xl mb-12">
                 <span className="text-gradient-primary">{"-{ "}</span>
-                Technologies
+                Skills
                 <span className="text-gradient-primary">{" }-"}</span>
        </h1>
       <Marquee autoFill pauseOnClick>

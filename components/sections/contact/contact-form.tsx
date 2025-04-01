@@ -76,7 +76,7 @@ export function ContactForm() {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>_Name</FormLabel>
+              <FormLabel>Name</FormLabel>
               <FormControl>
                 <Input placeholder="Your-Name" {...field} />
               </FormControl>
@@ -89,7 +89,7 @@ export function ContactForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>_Email</FormLabel>
+              <FormLabel>Email</FormLabel>
               <FormControl>
                 <Input placeholder="your-email@email.com" {...field} />
               </FormControl>
@@ -102,7 +102,7 @@ export function ContactForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>_Message</FormLabel>
+              <FormLabel>Message</FormLabel>
               <FormControl>
                 <Textarea
                   placeholder="Let's Work Together!"
@@ -114,7 +114,7 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button className="block ml-auto" type="submit" disabled={isSubmitting}>
+        <Button className="block ml-auto bg-primary-foreground" type="submit" disabled={isSubmitting}>
           {isSubmitting ? "Sending..." : "Submit"}
         </Button>
       </form>

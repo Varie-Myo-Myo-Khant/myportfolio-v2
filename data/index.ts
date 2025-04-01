@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail,File, Home,AppWindowMac, LucideSend, User  } from "lucide-react";
 
 const data = {
   home: {
@@ -21,6 +21,42 @@ const data = {
       }
     ],
   },
+  header:{
+    navItems:[
+        {
+            id: 1,
+            name: "Home.tsx",
+            path: "#home",
+            icon: Home,
+          },
+          {
+            id: 2,
+            name: "About.tsx",
+            path: "#about",
+            icon: User,
+          },
+          {
+            id: 3,
+            name: "Skills.tsx",
+            path: "#skills",
+            icon: AppWindowMac,
+          },
+          {
+            id: 4,
+            name: "Projects.tsx",
+            path: "#projects",
+            icon: File,
+          },
+          {
+            id: 5,
+            name: "Contact.tsx",
+            path: "#contact",
+            icon: LucideSend,
+            isRight: true,
+          },
+    ]
+
+  },
   about: {
     description:
       "🚀 Software Engineer | AI Developer | Backend Specialist",
@@ -32,7 +68,7 @@ const data = {
     ],
   },
   projects: {
-    description:"Projects that I have recently been worked onHere are some of the recent projects I’ve worked on, demonstrating my expertise in diverse fields.",
+    description:"Here are some of the recent projects I’ve worked on, demonstrating my expertise in diverse fields.",
     projects: [
         {
           id: 1,

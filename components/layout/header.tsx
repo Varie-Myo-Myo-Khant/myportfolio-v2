@@ -1,36 +1,10 @@
 "use client";
-import { File, Home,AppWindowMac, LucideSend, User } from "lucide-react";
+import data from "@/data";
 import Link from "next/link";
 import useHash from "@/hooks/use-hash";
 import Image from "next/image";
 import {cn} from "@/lib/utils";
-const navItems = [
-    {
-      id: 1,
-      name: "Home.tsx",
-      path: "#home",
-      icon: Home,
-    },
-    {
-      id: 2,
-      name: "About.tsx",
-      path: "#about",
-      icon: User,
-    },
-    {
-      id: 4,
-      name: "Projects.tsx",
-      path: "#projects",
-      icon: File,
-    },
-    {
-      id: 5,
-      name: "Contact-Me.tsx",
-      path: "#contact",
-      icon: LucideSend,
-      isRight: true,
-    },
-  ];
+
 
   export default function Header(){
     const {hash,updateHash}= useHash();
@@ -40,19 +14,30 @@ const navItems = [
               <Image src="/img/fav.svg" alt="Varie Logo" width={26} height={26} className="object-contain"/>
             </div>
             <div className="flex item-center size-full">
-              {navItems.map((item)=>{
+              {data.header.navItems.map((item)=>{
                 const isActive= item.path===hash || (item.path ==="#home" && hash==="");
                 return(
                   <Link key={item.id} href={item.path} scroll 
                   onClick={() => updateHash(item.path.substring(1))}
                   className={cn(
-                    "relative h-full w-fit md:min-w-40 border-x flex items-center justify-start gap-2 text-muted-foreground px-4",
+                    "relative h-full w-fit lg:min-w-40 border-x flex items-center justify-start gap-2 text-muted-foreground px-3",
                     "hover:bg-muted transition-colors duration-200 ease-in-out",
                     isActive && "text-foreground bg-background",
                     item.isRight && "ml-auto"
                   )}>
                   <item.icon size={14} className="text-primary-foreground" />
-                  <span className="hidden md:inline">{item.name}</span> {isActive && <BorderActive />}
+                  <span className="hidden lg:text-base lg:inline md:text-xs">{item.name}</span> {isActive && <BorderActive />}
+                </Link>
+                );
+              })}
+              {data.sidebar.links.map((item)=>{
+                return(
+                  <Link key={item.name} href={item.link} target="__blank" 
+                  className={cn(
+                    "relative h-full w-fit lg:hidden border-x flex items-center justify-start gap-2 text-muted-foreground px-3",
+                    "hover:bg-muted hover:text-white transition-colors duration-200 ease-in-out",
+                  )}>
+                  <item.icon size={14} className="text-primary-foreground" />
                 </Link>
                 );
               })}

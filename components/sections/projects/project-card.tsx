@@ -18,7 +18,7 @@ type props = {
 
 export default function ProjectCard({ project }: props) {
   return (
-    <div className="w-full max-w-[500px] rounded-2xl bg-muted border sticky top-8">
+    <div className="w-full lg:max-w-[400px] max-w-fit rounded-2xl bg-muted border px-3 sticky top-8">
       <div className="flex justify-between flex-shrink-0 px-4 pt-2">
         <div className="flex items-center gap-2 text-muted-foreground">
           <Globe size={18} />
@@ -30,7 +30,7 @@ export default function ProjectCard({ project }: props) {
           <span className="block rounded-full size-3 bg-red-500 " />
         </div>
       </div>
-      <div className="group relative h-[200px] overflow-hidden cursor-pointer rounded-lg m-2 border">
+      <div className="group relative h-[200px] overflow-hidden cursor-pointer rounded-lg m-2  border">
         <Image className="size-full object-cover object-top" src={project.image} alt={project.title} width={400} height={400} />
         <Link href={project.previewLink} target="_blank" className="size-full bg-black/50 absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity" />
         <ExternalLink size={24} className="absolute top-4 right-4 opacity-90 hidden group-hover:block" />

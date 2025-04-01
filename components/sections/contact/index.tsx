@@ -12,7 +12,7 @@ export default function ContactSection() {
   const ref = useRef(null);
   useCurSection(ref, 0.5);
   return (
-    <div ref={ref} id="contact" className="w-full container py-32">
+    <div ref={ref} id="contact" className="w-full container py-32 px-6">
       <h1 className="text-center text-2xl md:text-4xl mb-12">
         <span className="text-gradient-primary">{"-{ "}</span>
         Contact Me
@@ -32,7 +32,7 @@ export default function ContactSection() {
           <div className="flex justify-between flex-shrink-0 px-4 pt-2">
             <div className="flex items-center gap-2 text-muted-foreground">
               <Globe size={18} />
-              <span>{data.contact.email}</span>
+              <span className="hidden md:inline">{data.contact.email}</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="block rounded-full size-3 bg-green-500 ml-auto" />

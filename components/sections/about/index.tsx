@@ -17,7 +17,7 @@ export default function AboutSection(){
                 <span className="text-gradient-primary">{" }-"}</span>
             </h1>
 
-            <div className="flex gap-9 items-center flex-col lg:flex-row w-10/12 mx-auto p-5 rounded-lg container">
+            <div className="flex gap-9 items-center flex-col lg:flex-row md:w-10/12 mx-auto p-5 rounded-lg container">
             <div className="relative flex-shrink-0">
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 1, ease: "easeIn" }} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-primary opacity-50 size-[120px] rounded-full blur-3xl" />
                 <motion.div initial={{ x: "-200%" }} animate={{ x: 0 }} transition={{ duration: 0.5, ease: "easeInOut" }} className="rounded-full size-[200px] bg-gradient-primary p-0.5">

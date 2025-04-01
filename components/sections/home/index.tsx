@@ -16,10 +16,10 @@ export default function HomeSection(){
     const ref=useRef(null);
     const isInView=useCarSection(ref);
     return(
-        <section id="home" ref={ref} className="relative min-h-full flex flex-col lg:flex-row gap-20 p-6 items-center justify-center overflow-hidden container text-center md:text-left" >
+        <section id="home" ref={ref} className="relative min-h-full flex flex-col  lg:flex-row gap-10 min-w-full p-6 items-center justify-center container text-center md:min-h-fit" >
             <Image className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 text-transparent opacity-10 h-auto w-10/12 max-w-[1250px]" src="/img/grid.svg" alt="grid image" width={0} height={0}/>
 
-            <div className="space-y-7 text-center md:text-left md:text-xl">
+            <div className="space-y-7 lg:text-left text-center">
                 <div className="-space-y-1">
                 <p>Hi 👋, I&apos;m</p>
                 <motion.div variants={{ initial: { opacity: 0, scale: 0, y: "-20%" }, end: { opacity: 1, scale: 1, y: ["70%", 0] } }} initial="initial" animate="end" transition={{ duration: 1 }} className="relative min-w-[350px] pt-10 text-8xl min-h-[150px]">
@@ -53,9 +53,9 @@ export default function HomeSection(){
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-20 bg-gradient-primary opacity-50 w-full h-10 blur-3xl" />
                     <TextAnimation>{data.home.name}</TextAnimation>
                 </h1>
-                <h2 className="text-muted-foreground">
-                    {"// "} {data.home.description.split(/#(\w+)/g).map((e, i) => (i % 2 === 0 ? e : <span key={`wrapped_${i}`} className="text-secondary">{`{${e.replaceAll("__", "-").replaceAll("_", " ")}}`}</span>))}
-                </h2>
+                <p className="text-muted-foreground overflow:auto text-xs md:text-2xl">
+                    {"// "} {data.home.description.split(/#(\w+)/g).map((e, i) => (i % 2 === 0 ? e : <span key={`wrapped_${i}`} className="text-primary-foreground">{`{${e.replaceAll("__", "-").replaceAll("_", " ")}}`}</span>))}
+                </p>
                 </div>
                 <div className="space-x-4">
                 <Button
@@ -74,7 +74,7 @@ export default function HomeSection(){
                 </div>
             </div>
             
-          <div className="flex flex-col items-center gap-2 text-center w-[450px]">
+          <div className="flex flex-col items-center gap-2 text-center max-w-fit lg:ml-10  md:w-[400px]">
             <ChatAssistant />
           </div>
         
@@ -87,10 +87,10 @@ export default function HomeSection(){
 
 const TextAnimation = ({ children }: { children: React.ReactNode }) => {
     return (
-      <div className="overflow-hidden relative">
+      <div className="relative">
         <motion.div className="absolute top-0 left-0 h-full w-full bg-gradient-primary origin-left" initial={{ scaleX: 1 }} animate={{ scaleX: [1, 0] }} transition={{ duration: 0.5 }} />
   
-        <motion.div initial={{ y: "-100%", opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.3 }} className="text-5xl py-10">
+        <motion.div initial={{ y: "-100%", opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.3 }} className="lg:text-5xl py-10 text-4xl">
           {children}
         </motion.div>
       </div>

@@ -31,21 +31,16 @@ const MESSAGE_HISTORY_LIMIT = 5;
 
 const QUICK_OPTIONS: QuickOption[] = [
   {
-    text: "👩‍💻 Skills & Experience",
-    message: "Can you tell me about Aga's main skills and experience?",
-  },
-  {
-    text: "🚀 Project Collaboration",
-    message:
-      "I'm interested in working with Aga. What's the best way to start?",
+    text: "👩‍💻 About Varie",
+    message: "Can you tell me about Varie's main skills and experience?",
   },
   {
     text: "💼 Past Projects",
-    message: "Could you share some examples of Aga's past projects?",
+    message: "Could you share some examples of Varie's past projects?",
   },
   {
-    text: "⚡ AI Integration",
-    message: "What kind of AI features can Aga implement in projects?",
+    text: "⚡ Tech Stack",
+    message: "What are Varie's core tech stack?",
   },
 ];
 
@@ -68,7 +63,7 @@ export default function ChatAssistant() {
     {
       role: "assistant",
       content:
-        "Hi! I'm Aga's AI assistant. I can help you learn more about her skills, experience, or how she can help with your project. What would you like to know?",
+        "Hi! I'm Varie's assistant. I can help you learn more about her skills, experience. What would you like to know?",
       timestamp: new Date(),
     },
   ]);
@@ -204,7 +199,7 @@ export default function ChatAssistant() {
         {
           role: "assistant",
           content:
-            "Hi! I'm Aga's AI assistant. I can help you learn more about her skills, experience, or how she can help with your project. What would you like to know?",
+            "Hi! I'm Varie's assistant. I can help you learn more about her skills, experience, or how she can help with your project. What would you like to know?",
           timestamp: new Date(),
         },
       ]);
@@ -231,9 +226,9 @@ export default function ChatAssistant() {
   return (
     <div className="flex flex-col h-[500px] max-h-[500px] bg-muted border rounded-2xl overflow-hidden">
       <div className="flex justify-between items-center px-4 py-2 border-b bg-muted">
-        <div className="flex items-center gap-2 text-muted-foreground">
+        <div className="flex items-center gap-2 text-primary-foreground">
           <Bot size={18} />
-          <span>AI Assistant</span>
+          <span>Varie's Assistant</span>
         </div>
 
         <motion.button
@@ -276,7 +271,7 @@ export default function ChatAssistant() {
                     : "polygon(0% 0%, 100% 0%, 100% 50%, calc(100% + 10px) 50%, 100% 100%, 0% 100%)",
               }}
               className={`rounded-2xl p-3 max-w-[80%] text-left ${
-                msg.role === "assistant" ? "bg-secondary/15" : "bg-primary/50"
+                msg.role === "assistant" ? "bg-secondary/15" : "bg-primary-foreground/50"
               }`}
             >
               <ReactMarkdown
@@ -366,7 +361,7 @@ export default function ChatAssistant() {
           <button
             type="submit"
             disabled={isTyping || !input.trim()}
-            className="p-2 rounded-lg bg-primary text-primary-foreground hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="p-2 rounded-lg bg-primary-foreground text-white hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <Send size={20} />
           </button>

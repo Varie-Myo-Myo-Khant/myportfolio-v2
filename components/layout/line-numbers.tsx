@@ -2,7 +2,7 @@
 
 export default function LinesNumber(){
     return(
-        <div className="w-fit px-5 py-5 text-muted-foreground/70 sm:flex flex-col items-end gap-1 flex-shrink-0">
+        <div className="w-fit px-5 py-5 text-muted-foreground/70  hidden  sm:flex md:flex-col items-end gap-1 flex-shrink-0">
         {Array(150).fill(0).map((_,i)=>(<div key={i}>{`${i+1}`}</div>))}
         </div>
     );

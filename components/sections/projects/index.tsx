@@ -12,7 +12,7 @@ export default function ProjectsSection() {
   const ref = useRef(null);
   useCurSection(ref, 0.1);
   return (
-    <div ref={ref} id="projects" className="w-full p-12 flex justify-between flex-col items-center lg:flex-row lg:items-stretch gap-12 container my-32 text-sm md:text-base">
+    <div ref={ref} id="projects" className="w-full py-12 px-6 flex justify-between flex-col items-center lg:flex-row lg:items-stretch gap-10 container mt-32 text-sm md:text-base">
       <div>
         <div className="sticky top-8 text-center md:text-left">
          
@@ -22,8 +22,8 @@ export default function ProjectsSection() {
                 Projects
                 <span className="text-gradient-primary">{" }-"}</span>
             </h1>
-          <LaptopAnimation className="w-[300px] -scale-x-100 scale-y-100 mx-auto md:mx-0" />
-          <p className="w-[400px] text-muted-foreground">{data.projects.description}</p>
+          <LaptopAnimation className="w-[300px] -scale-x-100 scale-y-100 mx-auto  lg:mx-0" />
+          <p className="lg:w-[400px] text-muted-foreground text-center">{data.projects.description}</p>
         </div>
       </div>
       <div className="space-y-[100vh]">
