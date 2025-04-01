@@ -47,6 +47,9 @@ export default function HomeSection(){
                 )}
                 </div>
             </div>
+            <div> 
+
+           
             <motion.div variants={{ initial: { opacity: 0, scale: 0, y: "-20%" }, end: { opacity: 1, scale: 1, y: ["70%", 0] } }} initial="initial" animate="end" transition={{ duration: 1 }} className="relative min-w-[350px] text-center text-9xl min-h-[150px]">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-20 bg-gradient-primary opacity-50 size-[120px] rounded-full blur-3xl" />
 
@@ -74,8 +77,10 @@ export default function HomeSection(){
                 </div>
           </motion.div>
           <div className="flex flex-col items-center gap-2 text-center w-[450px]">
-          <ChatAssistant />
+            <ChatAssistant />
+          </div>
         </div>
+          
         </section>
     );
 
