@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     "Software Engineer",
     "Web Applications",
     "Performance Optimization",
-    "Aga Kadela",
+    "Myo Myo Khant",
   ],
   authors: [{ name: "Myo Myo Khant" }],
   creator: "Myo Myo Khant",

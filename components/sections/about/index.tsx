@@ -29,15 +29,16 @@ export default function AboutSection(){
                 <motion.p initial={{ opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.7, ease: "easeIn", duration: 0.5 }} className="text-muted-foreground">
                 {data.about.description}
                 </motion.p>
-                <motion.p initial={{ opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.7, ease: "easeIn", duration: 0.5 }} className="text-muted-foreground">
+                
+                <ul className="text-muted-foreground">
                     {data.about.skills.map((item)=>{
                         return(
-                            <ul>
+                            
                                 <li key={item.id} className=" flex space-x-2 text-justify"> <BadgeCheck className="text-primary-foreground inline mr-4" />{item.text}</li>
-                            </ul>
+                            
                         );
                     })}
-                </motion.p>
+                </ul> 
                 <br />
                 <a href="#contact" className="text-primary-foreground hover:underline"> Get In Touch! 🚀</a> 
             </div>

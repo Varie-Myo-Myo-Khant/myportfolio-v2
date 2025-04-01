@@ -11,9 +11,11 @@ export default function Technologies() {
   useCurSection(ref);
   return (
     <div ref={ref} className="flex gap-4 items-center flex-col justify-center bg-muted w-full py-12 my-12 overflow-hidden">
-      <h2 className="text-2xl font-bold">
-        <span className="text-gradient-secondary">My Technologies</span>
-      </h2>
+      <h1 className="text-center text-3xl md:text-5xl mb-12">
+                <span className="text-gradient-primary">{"-{ "}</span>
+                Technologies
+                <span className="text-gradient-primary">{" }-"}</span>
+       </h1>
       <Marquee autoFill pauseOnClick>
         <div className="flex gap-4 items-center justify-center w-11/12 p-2">
           {data.technologies.skills.map((skill) => (
