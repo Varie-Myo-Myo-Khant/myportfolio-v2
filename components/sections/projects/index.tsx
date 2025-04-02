@@ -29,7 +29,10 @@ export default function ProjectsSection() {
       <div className="space-y-[100vh]">
       <SessionProvider>
         {data.projects.projects.map((project) => (
-          <ProjectCard key={project.title} project={project} />
+          project.id < 6 && (
+            <ProjectCard key={project.title} project={project} />
+          )
+          
         ))}
         </SessionProvider>
       </div>
