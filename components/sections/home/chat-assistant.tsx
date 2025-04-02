@@ -31,8 +31,8 @@ const MESSAGE_HISTORY_LIMIT = 5;
 
 const QUICK_OPTIONS: QuickOption[] = [
   {
-    text: "👩‍💻 About Varie",
-    message: "Can you tell me about Varie's main skills and experience?",
+    text: "👩‍💻 Work Experience",
+    message: "Can you tell me about Varie's work experience?",
   },
   {
     text: "💼 Past Projects",

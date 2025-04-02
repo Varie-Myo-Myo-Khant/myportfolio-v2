@@ -33,8 +33,16 @@ const createContextFromData = () => {
     - **Cloud & DevOps**: Docker, Nginx, Chef, GitHub, GitLab
     - **CMS & Web Development**: WordPress, Webflow
     - **Analytics & Data Tools**: IBM SPSS, Power BI
-    
-    Professional Experience:
+
+    Professional Work Experenice
+    - 2020 to Present - Freelance Software Developer: Developed and deployed AI-driven applications, including chatbots, recommendation engines, and data analytics platforms, utilizing cloud technologies.
+    - 2024 to Present - Software Engineer | ATOM Myanmar: Developed scalable telecom solutions and B2B sales platforms, optimizing broadband systems and automating data workflows.
+    - 2024 - ML Software Engineer | Mascot Pte Ltd, Myanmar: Led the development of an LLM-powered RAG recommendation system for personalized elderly activity planning.
+    - 2022 to 2023 - Web Director | Digital Laboratory Myanmar: Developed and optimized 8+ websites, enhancing UX/UI, SEO performance, and engagement across multiple platforms.
+    - 2020 to 2024 - IT Research Assistant: Led survey experiments comparing Generative AI tools and image-to-text systems, conducted ETL processes, and contributed to research papers published in IEEE.
+    - 2022 - Junior Software Tester: Performed functional and regression testing on ERP modules, reducing software defects by 30% and assisting with Agile testing processes.
+  
+    Professional Project Experience:
     - Developed **Food Buddy AI**, an LLM-powered chatbot recommending restaurants based on user preferences
     - Created **Smart Activity Planner**, a recommendation system for elderly users using RAG and Milvus
     - Engineered a **Telecom B2B System** for broadband sales and customer support (Laravel, MySQL)
