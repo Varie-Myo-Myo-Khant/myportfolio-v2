@@ -77,8 +77,8 @@ const data = {
         "image": "",
         "sourcelink": "https://github.com/your-repo/food-buddy-ai",
         "techstack": ["Django", "React", "Milvus", "LLMs", "RAG"],
-        "year": 2024,
-        "confidential": false
+        "year": 2025,
+        "confidential": true
       },
       {
         "id": 2,
@@ -87,7 +87,7 @@ const data = {
         "image": "",
         "sourcelink": "https://github.com/your-repo/smart-activity-planner",
         "techstack": ["Next.js", "Django", "Milvus", "LLMs"],
-        "year": 2024,
+        "year": 2025,
         "confidential": true
       },
       {
@@ -97,7 +97,7 @@ const data = {
         "image": "",
         "sourcelink": "",
         "techstack": ["Laravel", "PHP", "MySQL"],
-        "year": 2023,
+        "year": 2025,
         "confidential": true
       },
       {
@@ -107,7 +107,7 @@ const data = {
         "image": "",
         "sourcelink": "",
         "techstack": ["Laravel", "PHP", "MySQL"],
-        "year": 2023,
+        "year": 2024,
         "confidential": true
       },
       {
@@ -117,7 +117,7 @@ const data = {
         "image": "",
         "sourcelink": "",
         "techstack": ["Laravel", "MySQL"],
-        "year": 2023,
+        "year": 2025,
         "confidential": true
       },
       {
@@ -127,7 +127,7 @@ const data = {
         "image": "",
         "sourcelink": "",
         "techstack": ["Laravel", "PHP", "MySQL"],
-        "year": 2023,
+        "year": 2024,
         "confidential": true
       },
       {

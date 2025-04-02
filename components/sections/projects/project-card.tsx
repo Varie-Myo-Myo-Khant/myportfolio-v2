@@ -45,7 +45,7 @@ export default function ProjectCard({ project }: props) {
       <div className="flex justify-between flex-shrink-0 px-4 pt-2">
         <div className="flex items-center gap-2 text-muted-foreground">
           <Globe size={18} />
-          <span>{project.confidential? "Work Project":"Freelance Project"}</span>
+          <span>{project.confidential? "Work Project":"Freelance Project"} - {project.year}</span>
         </div>
         <div className="flex items-center gap-2">
           <span className="block rounded-full size-3 bg-green-500 ml-auto" />
@@ -60,7 +60,7 @@ export default function ProjectCard({ project }: props) {
       </div>
       <div className="px-4 py-2 text-xs w-full">
         <h2 className="text-lg capitalize font-bold my-3">{project.title}</h2>
-        <p className="text-muted-foreground">
+        <p className="text-muted-foreground mb-1">
          <span className="text-primary-foreground"> Tech Stack :</span> {
             project.techstack.toString()
             }

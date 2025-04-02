@@ -8,9 +8,9 @@ import data from "@/data";
 
 export default function Skills() {
   const ref = useRef(null);
-  useCurSection(ref);
+  useCurSection(ref,0.1);
   return (
-    <div ref={ref} id="skills" className="flex gap-4 items-center flex-col justify-center bg-muted w-full  overflow-hidden">
+    <div ref={ref} id="skills" className="flex gap-4 items-center flex-col pt-12 justify-center bg-muted w-full  overflow-hidden">
       <h1 className="text-center text-3xl md:text-5xl mb-12">
                 <span className="text-gradient-primary">{"-{ "}</span>
                 Skills

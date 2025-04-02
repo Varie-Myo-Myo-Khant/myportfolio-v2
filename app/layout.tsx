@@ -45,7 +45,7 @@ export const metadata: Metadata = {
       "Experienced in Full Stack Development, AI Integration, POS Systems, and Big Data Analysis using modern technologies.",
     images: [
       {
-        url: "/img/website.png",
+        url: "/img/mywebsite.png",
         width: 1200,
         height: 630,
         alt: "Myo Myo Khant - Full Stack Developer & AI Engineer",
