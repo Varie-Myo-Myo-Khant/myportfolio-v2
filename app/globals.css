@@ -75,3 +75,10 @@
   perspective: 1000px;
 }
 
+@layer utilities {
+  .border-gradient-primary {
+    border: 2px solid transparent;
+    border-image: linear-gradient(to right, var(--gradient-primary)) 1;
+  }
+}
+

@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import Image from "next/image";
-
+import { SessionProvider } from "next-auth/react";
 import LaptopAnimation from "./laptop-animation";
 
 import ProjectCard from "./project-card";
@@ -27,9 +27,11 @@ export default function ProjectsSection() {
         </div>
       </div>
       <div className="space-y-[100vh]">
+      <SessionProvider>
         {data.projects.projects.map((project) => (
           <ProjectCard key={project.title} project={project} />
         ))}
+        </SessionProvider>
       </div>
     </div>
   );

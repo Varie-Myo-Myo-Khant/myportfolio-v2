@@ -114,7 +114,7 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button className="block ml-auto bg-primary-foreground" type="submit" disabled={isSubmitting}>
+        <Button className="block ml-auto"  variant="gradientDefault" type="submit" disabled={isSubmitting}>
           {isSubmitting ? "Sending..." : "Submit"}
         </Button>
       </form>
