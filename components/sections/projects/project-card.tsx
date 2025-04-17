@@ -41,11 +41,11 @@ export default function ProjectCard({ project }: props) {
   };
 
   return (
-    <div className="w-full lg:max-w-[400px] max-w-fit rounded-2xl bg-muted border px-3 sticky top-4">
+    <div className="w-full lg:max-w-[400px] max-w-fit rounded-2xl bg-muted border px-3 top-4">
       <div className="flex justify-between flex-shrink-0 px-4 pt-2">
         <div className="flex items-center gap-2 text-muted-foreground">
           <Globe size={18} />
-          <span>{project.confidential? "Work Project":"Freelance Project"} - {project.year}</span>
+          <span>{project.category?.toUpperCase()} - {project.year}</span>
         </div>
         <div className="flex items-center gap-2">
           <span className="block rounded-full size-3 bg-green-500 ml-auto" />
@@ -59,39 +59,41 @@ export default function ProjectCard({ project }: props) {
         <ExternalLink size={24} className="absolute top-4 right-4 opacity-90 hidden group-hover:block" />
       </div>
       <div className="px-4 py-2 text-xs w-full">
-        <h2 className="text-lg capitalize font-bold my-3">{project.title}</h2>
+        <h2 className="text-lg capitalize font-bold my-3 h-12 max-h-12">{project.title}</h2>
+        <div className="h-16 max-h-16 overflow-hidden">
         <p className="text-muted-foreground mb-1">
          <span className="text-primary-foreground"> Tech Stack :</span> {
             project.techstack.toString()
             }
         </p>
         <p className="text-muted-foreground h-[50] max-h-[50] overflow-hidden"> 
-          <span className="text-primary-foreground"> Overview :</span> {project.description}</p>
+        <span className="text-primary-foreground"> Overview :</span> {project.description}</p>
+        </div>
+        
         <div className="space-x-2 my-5">
           {project.confidential ? (
             passwordCorrect || session ? (
               // Show the Live view link if the user is authenticated or password is correct
               <Button asChild variant="gradientDefault" >
-                <Link href={project.sourcelink} target="_blank">
+                <Link href={`/projects/${project.id}`}>
                   View Details
                 </Link>
               </Button>
             ) : (
               <div>
                 {/* If password is not entered correctly, show the Enter Password button */}
-                <Button
+                <Button className="text-xs"
                   variant="gradientDefault"
                   onClick={() => setShowPasswordForm(true)}
                 >
-                  Require Credentails to View Details
+                  Require Crendentials to View
                 </Button>
 
                 {showPasswordForm && (
                   <div className="fixed inset-0 z-50 flex items-center justify-center">
                     <div className="bg-white text-md p-5 rounded-lg w-[90%] max-w-md">
                       <div className="flex justify-between items-center">
-                      <h3 className=" text-black ">Enter Project Password</h3>
-                        
+                      <h3 className=" text-black font-bold text-sm" >Enter Project Password</h3>
                         <Button  onClick={() => setShowPasswordForm(false)} size="icon" className="bg-transparent text-muted hover:bg-transparent hover:text-primary-foreground p-0 m-0 w-auto">
                           <X size={20} />
                         </Button>
@@ -102,6 +104,7 @@ export default function ProjectCard({ project }: props) {
                           {passwordError}
                         </div>
                       )}
+                      <code className="text-black text-10px">You’ll need credentials to access this project’s details.</code>
                       <form onSubmit={handlePasswordSubmit}>
                       <div className="flex justify-between items-center gap-2 my-4">
                         <input
@@ -134,9 +137,9 @@ export default function ProjectCard({ project }: props) {
             )
           ) : (
             <Button asChild variant="gradientDefault" >
-              <Link href={ project.sourcelink} target="_blank">
-               View Details
-              </Link>
+               <Link href={`/projects/${project.id}`}>
+                  View Details
+                </Link>
             </Button>
             
           )}

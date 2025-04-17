@@ -40,7 +40,7 @@ export default function AboutSection(){
                     })}
                 </ul> 
                 <br />
-                <a href="#contact" className="text-primary-foreground hover:underline"> Get In Touch! 🚀</a> 
+                <a href="#contact" className="text-gradient-primary hover:text-white"> Get In Touch! 🚀</a> 
             </div>
 
             </div>

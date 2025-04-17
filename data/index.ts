@@ -68,17 +68,22 @@ const data = {
     ],
   },
   projects: {
-    description:"Here are some of the recent projects I’ve worked on, demonstrating my expertise in diverse fields.",
+    description:"These recent projects are just a glimpse. Dive in to see everything I’ve created.",
     "projects": [
       {
         "id": 1,
         "title": "Food Buddy AI",
         "description": "An AI-powered chatbot providing food recommendations based on user preferences and conditions. Built with RAG, LLMs, Django, React, and Milvus.",
         "image": "",
+        "livelink":"https://myomyokhant.site",
         "sourcelink": "https://github.com/your-repo/food-buddy-ai",
         "techstack": ["Django", "React", "Milvus", "LLMs", "RAG"],
         "year": 2025,
-        "confidential": true
+        "confidential": false,
+        "category":"Freelance",
+        "role":"Backend",
+
+        "details":"With 4+ years of experience in software engineering and AI development, I have worked on full-stack applications, AI-powered solutions, and scalable enterprise systems. I have experience developing AI-driven chatbots, recommendation engines, and automation tools using Python, Django, LangChain, and cloud technologies. In my previous roles, I have worked on broadband subscription management, e-commerce applications, and enterprise-level AI/ML integrations. My work spans startups, telecom companies, and freelance projects, where I have designed and deployed AI applications, microservices, and cloud-based infrastructures. Passionate about innovation, I thrive in fast-paced, collaborative environments that drive technological advancements."
       },
       {
         "id": 2,
@@ -88,7 +93,8 @@ const data = {
         "sourcelink": "https://github.com/your-repo/smart-activity-planner",
         "techstack": ["Next.js", "Django", "Milvus", "LLMs"],
         "year": 2025,
-        "confidential": true
+        "confidential": false,
+        "category":"Work"
       },
       {
         "id": 3,
@@ -98,7 +104,8 @@ const data = {
         "sourcelink": "",
         "techstack": ["Laravel", "PHP", "MySQL"],
         "year": 2025,
-        "confidential": true
+        "confidential": true,
+        "category":"Work"
       },
       {
         "id": 4,
@@ -108,7 +115,8 @@ const data = {
         "sourcelink": "",
         "techstack": ["Laravel", "PHP", "MySQL"],
         "year": 2024,
-        "confidential": true
+        "confidential": true,
+        "category":"Work"
       },
       {
         "id": 5,
@@ -118,7 +126,8 @@ const data = {
         "sourcelink": "",
         "techstack": ["Laravel", "MySQL"],
         "year": 2025,
-        "confidential": true
+        "confidential": true,
+        "category":"Work"
       },
       {
         "id": 6,
@@ -128,7 +137,8 @@ const data = {
         "sourcelink": "",
         "techstack": ["Laravel", "PHP", "MySQL"],
         "year": 2024,
-        "confidential": true
+        "confidential": true,
+        "category":"Work"
       },
       {
         "id": 7,
@@ -138,7 +148,8 @@ const data = {
         "sourcelink": "https://github.com/your-repo/i-mage",
         "techstack": ["Python", "OpenCV", "Tkinter"],
         "year": 2023,
-        "confidential": true
+        "confidential": true,
+        "category":"Freelance"
       },
       {
         "id": 8,
@@ -148,7 +159,8 @@ const data = {
         "sourcelink": "https://github.com/your-repo/smart-robotic-car",
         "techstack": ["C", "Arduino", "3D Modeling", "2D Design"],
         "year": 2022,
-        "confidential": true
+        "confidential": true,
+        "category":"Personal"
       },
       {
         "id": 9,
@@ -158,7 +170,8 @@ const data = {
         "sourcelink": "https://github.com/your-repo/university-search",
         "techstack": ["Java", "MySQL"],
         "year": 2021,
-        "confidential": true
+        "confidential": true,
+        "category":"Personal"
       },
       {
         "id": 10,
@@ -168,7 +181,8 @@ const data = {
         "sourcelink": "https://github.com/your-repo/ran-rangoon",
         "techstack": ["JavaScript", "HTML", "CSS", "Bootstrap"],
         "year": 2021,
-        "confidential": true
+        "confidential": true,
+        "category":"Personal"
       },
       {
         "id": 11,
@@ -178,7 +192,8 @@ const data = {
         "sourcelink": "https://github.com/your-repo/garbage-collector",
         "techstack": ["C", "Arduino", "2D Design"],
         "year": 2020,
-        "confidential": true
+        "confidential": true,
+        "category":"Personal"
       },
       {
         "id": 12,
@@ -188,7 +203,9 @@ const data = {
         "sourcelink": "https://github.com/your-repo/face-recognition",
         "techstack": ["Python", "Face Recognition", "Raspberry Pi"],
         "year": 2020,
-        "confidential": true
+        "confidential": true,
+        "category":"Personal"
+
       },
       {
         "id": 13,
@@ -198,7 +215,8 @@ const data = {
         "sourcelink": "https://github.com/your-repo/voice-lock",
         "techstack": ["Python", "Voice Recognition", "Raspberry Pi"],
         "year": 2020,
-        "confidential": true
+        "confidential": true,
+        "category":"Personal"
       },
       {
         "id": 14,
@@ -208,7 +226,8 @@ const data = {
         "sourcelink": "https://github.com/your-repo/drawing-machine",
         "techstack": ["C", "Arduino", "2D Design", "Hardware Design"],
         "year": 2020,
-        "confidential": true
+        "confidential": true,
+        "category":"Personal"
       },
       {
         "id": 15,
@@ -218,7 +237,8 @@ const data = {
         "sourcelink": "https://github.com/your-repo/library-management",
         "techstack": ["C++"],
         "year": 2020,
-        "confidential": true
+        "confidential": true,
+        "category":"Personal"
       },
       {
         "id": 16,
@@ -228,7 +248,8 @@ const data = {
         "sourcelink": "https://github.com/your-repo/ferry-management",
         "techstack": ["PHP", "Bootstrap", "MySQL", "HTML"],
         "year": 2019,
-        "confidential": true
+        "confidential": true,
+        "category":"Personal"
       }
     ],
 
@@ -264,6 +285,26 @@ const data = {
     email: "myokhant12021@gmail.com",
     name: "Myo Myo Khant",
   },
+   certifications :{
+    lists: [
+    {
+      name: "AWS Certified Solutions Architect – Associate",
+      src: "/img/demo.png",
+    },
+    {
+      name: "HackerRank Python (Intermediate) Certificate",
+      src: "/img/demo.png",
+    },
+    {
+      name: "Google Cloud Fundamentals",
+      src: "/img/demo.png",
+    },
+    {
+      name: "Docker Certified Associate",
+      src: "/img/demo.png",
+    },
+  ]
+   } 
 };
 
 export default data;

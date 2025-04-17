@@ -1,30 +1,58 @@
 "use client";
-import Link from "next/link";
-import Image from "next/image";
-import Marquee from "react-fast-marquee";
-import { useRef } from "react";
-import useCurSection from "@/hooks/use-cur-section";
-import data from "@/data";
 
-export default function Skills() {
-  const ref = useRef(null);
-  useCurSection(ref,0.1);
+import React, { useRef } from "react";
+import useCurSection from "@/hooks/use-cur-section";
+import {
+  Code,
+  Cpu,
+  GitPullRequest,
+  Database,
+  Clipboard,
+  BarChart2,
+  Zap,
+  Search,
+} from "lucide-react";
+
+export default function SkillsHighlight() {
+  const ref = useRef<HTMLElement>(null);
+  useCurSection(ref, 0.1);
+
+  const highlights = [
+    { title: "Fullstack Development", Icon: Code },
+    { title: "AI Integration", Icon: Cpu },
+    { title: "API", Icon: GitPullRequest },
+    { title: "DB Management", Icon: Database },
+    { title: "Project Management", Icon: Clipboard },
+    { title: "Tools & Analytics", Icon: BarChart2 },
+    { title: "CI/CD Deployment", Icon: Zap },
+    { title: "Research & Development", Icon: Search },
+  ];
+
   return (
-    <div ref={ref} id="skills" className="flex gap-4 items-center flex-col pt-12 justify-center bg-muted w-full  overflow-hidden">
-      <h1 className="text-center text-3xl md:text-5xl mb-12">
-                <span className="text-gradient-primary">{"-{ "}</span>
-                Skills
-                <span className="text-gradient-primary">{" }-"}</span>
-       </h1>
-      <Marquee autoFill pauseOnClick>
-        <div className="flex gap-4 items-center justify-center w-11/12 p-2">
-          {data.technologies.skills.map((skill) => (
-            <Link key={skill.name} href={skill.link} target="_blank" className="bg-background border size-[70px] md:size-[90px] flex items-center justify-center rounded-full overflow-hidden p-6 flex-shrink-0 hover:bg-border">
-              <Image className="h-full w-auto" src={skill.src} alt={skill.name} width={50} height={50} />
-            </Link>
-          ))}
-        </div>
-      </Marquee>
-    </div>
+    <section
+      ref={ref}
+      id="skills"
+      className="w-full bg-muted/20 py-16 px-4 md:px-12 flex flex-col items-center"
+    >
+      <h1 className="mb-12 text-center text-3xl md:text-5xl">
+        <span className="text-gradient-primary">{"-{ "}</span>
+        Core Skills
+        <span className="text-gradient-primary">{" }-"}</span>
+      </h1>
+
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl w-full mx-auto">
+        {highlights.map(({ title, Icon }) => (
+          <div
+            key={title}
+            className="flex flex-col items-center gap-3 p-6 bg-background/10 border border-border rounded-2xl transition hover:bg-background/20"
+          >
+            <Icon className="w-10 h-10 text-primary" />
+            <span className="text-sm font-medium text-muted-foreground text-center">
+              {title}
+            </span>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }
