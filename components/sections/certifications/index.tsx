@@ -54,8 +54,8 @@ export default function Certifications() {
 
       {/* Modal Preview */}
       {openCert && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="relative bg-background rounded-lg p-4 max-w-3xl w-full mx-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-white bg-opacity-50">
+          <div className="relative bg-white rounded-lg p-4 max-w-2xl w-full mx-4">
             <button
               onClick={() => setOpenCert(null)}
               className="absolute top-2 right-2 text-muted-foreground hover:text-primary transition"
@@ -67,7 +67,7 @@ export default function Certifications() {
               alt={openCert.name}
               width={800}
               height={600}
-              className="object-contain w-full h-auto"
+              className="object-contain w-full h-auto p-10"
             />
             <p className="mt-4 text-center text-sm text-primary-foreground">
               {openCert.name}

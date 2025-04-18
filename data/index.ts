@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail,File, Home,AppWindowMac, LucideSend, User  } from "lucide-react";
+import { Github, Linkedin, Mail,File, Home,AppWindowMac, LucideSend, User ,Settings } from "lucide-react";
 
 const data = {
   home: {
@@ -45,10 +45,16 @@ const data = {
             id: 4,
             name: "Projects.tsx",
             path: "#projects",
-            icon: File,
+            icon: Settings,
           },
           {
             id: 5,
+            name: "Certifications.tsx",
+            path: "#certifications",
+            icon: File,
+          },
+          {
+            id: 6,
             name: "Contact.tsx",
             path: "#contact",
             icon: LucideSend,
@@ -289,7 +295,7 @@ const data = {
     lists: [
     {
       name: "AWS Certified Solutions Architect – Associate",
-      src: "/img/demo.png",
+      src: "/img/test.png",
     },
     {
       name: "HackerRank Python (Intermediate) Certificate",

@@ -6,9 +6,7 @@ import LaptopAnimation from "./laptop-animation";
 import { useRouter } from "next/navigation";
 import ProjectCard from "./project-card";
 import useCurSection from "@/hooks/use-cur-section";
-import data from "@/data";
-import { Button } from "@/components/ui/button";
-import { MoveRightIcon } from "lucide-react";
+import data from "@/data"; 
 
 export default function ProjectsSection() {
   const router = useRouter();
