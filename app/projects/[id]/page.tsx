@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,16 +7,13 @@ import { notFound } from "next/navigation";
 import {FolderArchiveIcon, Github, ExternalLinkIcon } from "lucide-react";
 import { motion } from "framer-motion";
 
-type Props = {
-  params: {
-    id: string;
-  };
-};
-
-export default function ProjectDetail({ params }: Props) {
-  const project = data.projects.projects.find(
-    (p) => p.id.toString() === params.id
-  );
+type props={
+  params:{
+    id:number;
+  }
+}
+export default function ProjectDetail({ params }: props) { 
+  const project = data.projects.projects.find((p) => (p.id) === parseInt(params.id));
 
   if (!project) return notFound();
 

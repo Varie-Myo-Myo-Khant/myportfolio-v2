@@ -78,7 +78,7 @@ export default function ProjectCard({ project }: props) {
                 {/* If password is not entered correctly, show the Enter Password button */}
                 <Button className="text-xs"
                   variant="gradientDefault"
-                  onClick={() => setShowPasswordForm(project.id.toString())}
+                  onClick={() => setShowPasswordForm(project.id)}
                 >
                   Require Crendentials to View
                 </Button>
