@@ -8,12 +8,12 @@ import ProjectCard from "./project-card";
 import useCurSection from "@/hooks/use-cur-section";
 import data from "@/data"; 
 
-export default function ProjectsSection() {
+export default function RecentProjectsSection() {
   const router = useRouter();
   const ref = useRef(null);
   useCurSection(ref, 0.1);
   return (
-    <div ref={ref} id="projects" className="w-full py-12 px-6 flex justify-between flex-col items-center lg:flex-row lg:items-stretch gap-10 container mt-32 text-sm md:text-base">
+    <div ref={ref} id="recent-projects" className="w-full py-12 px-6 flex justify-between flex-col items-center lg:flex-row lg:items-stretch gap-10 container mt-32 text-sm md:text-base">
       <div>
         <div className="sticky top-8 text-center">
          

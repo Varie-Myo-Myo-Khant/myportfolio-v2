@@ -13,9 +13,10 @@ export default function ContactSection() {
   useCurSection(ref, 0.5);
   return (
     <div ref={ref} id="contact" className="w-full container py-32 px-6">
-      <h1 className="text-center text-2xl md:text-4xl mb-12">
+     
+      <h1 className="mb-12 text-center text-3xl md:text-5xl">
         <span className="text-gradient-primary">{"-{ "}</span>
-        Contact Me
+       Contact Me
         <span className="text-gradient-primary">{" }-"}</span>
       </h1>
       <div className="flex items-center justify-around w-full h-full">

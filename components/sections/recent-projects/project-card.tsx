@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useSession } from "next-auth/react"; // Assuming you're using next-auth for authentication
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 type props = {
   project: {
@@ -23,8 +24,8 @@ type props = {
 export default function ProjectCard({ project }: props) {
   const { data: session } = useSession(); // Assuming you are using NextAuth for user session
   const [password, setPassword] = useState(""); // State for password input
-  const [passwordCorrect, setPasswordCorrect] = useState(false); // State to track if the password is correct
-  const [showPasswordForm, setShowPasswordForm] = useState(false); // State to toggle password form visibility
+  const router=useRouter();
+  const [showPasswordForm, setShowPasswordForm] = useState<{id:number} | null>(null);// State to toggle password form visibility
   const [passwordError, setPasswordError] = useState(""); // State to hold error message for incorrect password
 
   // Handle password submission
@@ -32,9 +33,10 @@ export default function ProjectCard({ project }: props) {
     e.preventDefault();
     const correctPassword = process.env.NEXT_PUBLIC_PROJECT_PASSWORD; // Access the password from the env variable
     if (password === correctPassword) {
-      setPasswordCorrect(true); // If correct, show the live view
+
+      router.push(`/projects/${project.id}`);
       setPasswordError(""); // Clear any previous error
-      setShowPasswordForm(false); // Close the password modal
+      setShowPasswordForm(null); // Close the password modal
     } else {
       setPasswordError("Incorrect password! Please try again or request access."); // Set error message
     }
@@ -72,19 +74,11 @@ export default function ProjectCard({ project }: props) {
         
         <div className="space-x-2 my-5">
           {project.confidential ? (
-            passwordCorrect || session ? (
-              // Show the Live view link if the user is authenticated or password is correct
-              <Button asChild variant="gradientDefault" >
-                <Link href={`/projects/${project.id}`}>
-                  View Details
-                </Link>
-              </Button>
-            ) : (
               <div>
                 {/* If password is not entered correctly, show the Enter Password button */}
                 <Button className="text-xs"
                   variant="gradientDefault"
-                  onClick={() => setShowPasswordForm(true)}
+                  onClick={() => setShowPasswordForm(project.id)}
                 >
                   Require Crendentials to View
                 </Button>
@@ -94,7 +88,7 @@ export default function ProjectCard({ project }: props) {
                     <div className="bg-white text-md p-5 rounded-lg w-[90%] max-w-md">
                       <div className="flex justify-between items-center">
                       <h3 className=" text-black font-bold text-sm" >Enter Project Password</h3>
-                        <Button  onClick={() => setShowPasswordForm(false)} size="icon" className="bg-transparent text-muted hover:bg-transparent hover:text-primary-foreground p-0 m-0 w-auto">
+                        <Button  onClick={() => setShowPasswordForm(null)} size="icon" className="bg-transparent text-muted hover:bg-transparent hover:text-primary-foreground p-0 m-0 w-auto">
                           <X size={20} />
                         </Button>
                       </div>
@@ -124,7 +118,7 @@ export default function ProjectCard({ project }: props) {
                         </div>
                         <p className="text-xs my-2 text-primary-foreground">
                         No Passowrd?&nbsp;
-                        <Link href="/#contact" onClick={() => setShowPasswordForm(false)} className="underline">Request access</Link>
+                        <Link href="/#contact" onClick={() => setShowPasswordForm(null)} className="underline">Request access</Link>
                         </p>
                         
                       </form>
@@ -134,7 +128,7 @@ export default function ProjectCard({ project }: props) {
                   </div>
                 )}
               </div>
-            )
+            
           ) : (
             <Button asChild variant="gradientDefault" >
                <Link href={`/projects/${project.id}`}>

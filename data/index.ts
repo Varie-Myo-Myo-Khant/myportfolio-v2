@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail,File, Home,AppWindowMac, LucideSend, User ,Settings } from "lucide-react";
+import {Clipboard, Zap,Search,Database,BarChart2,Code, Cpu, GitPullRequest,Github, Linkedin, Mail,File, Home,AppWindowMac, LucideSend, User ,Settings } from "lucide-react";
 
 const data = {
   home: {
@@ -44,7 +44,7 @@ const data = {
           {
             id: 4,
             name: "Projects.tsx",
-            path: "#projects",
+            path: "#recent-projects",
             icon: Settings,
           },
           {
@@ -85,10 +85,10 @@ const data = {
         "sourcelink": "https://github.com/your-repo/food-buddy-ai",
         "techstack": ["Django", "React", "Milvus", "LLMs", "RAG"],
         "year": 2025,
-        "confidential": false,
+        "confidential": true,
         "category":"Freelance",
         "role":"Backend",
-
+        "flowchart":"/img/test.png",
         "details":"With 4+ years of experience in software engineering and AI development, I have worked on full-stack applications, AI-powered solutions, and scalable enterprise systems. I have experience developing AI-driven chatbots, recommendation engines, and automation tools using Python, Django, LangChain, and cloud technologies. In my previous roles, I have worked on broadband subscription management, e-commerce applications, and enterprise-level AI/ML integrations. My work spans startups, telecom companies, and freelance projects, where I have designed and deployed AI applications, microservices, and cloud-based infrastructures. Passionate about innovation, I thrive in fast-paced, collaborative environments that drive technological advancements."
       },
       {
@@ -99,7 +99,7 @@ const data = {
         "sourcelink": "https://github.com/your-repo/smart-activity-planner",
         "techstack": ["Next.js", "Django", "Milvus", "LLMs"],
         "year": 2025,
-        "confidential": false,
+        "confidential": true,
         "category":"Work"
       },
       {
@@ -310,7 +310,18 @@ const data = {
       src: "/img/demo.png",
     },
   ]
-   } 
+   } ,
+    highlights :[
+    { title: "Fullstack Development", Icon: Code },
+    { title: "AI Integration", Icon: Cpu },
+    { title: "API Development", Icon: GitPullRequest },
+    { title: "Database Management", Icon: Database },
+    { title: "Project Management", Icon: Clipboard },
+    { title: "Tools & Analytics", Icon: BarChart2 },
+    { title: "CI/CD Deployment", Icon: Zap },
+    { title: "Research & Development", Icon: Search },
+  ]
+
 };
 
 export default data;

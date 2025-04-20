@@ -2,7 +2,7 @@
 import dynamic from 'next/dynamic';
 const ContactSection = dynamic(() => import('@/components/sections/contact'), { ssr: false });
 const HomeSection = dynamic(() => import('@/components/sections/home'), { ssr: false });
-const ProjectsSection = dynamic(() => import('@/components/sections/projects'), { ssr: false });
+const RecentProjectsSection = dynamic(() => import('@/components/sections/recent-projects'), { ssr: false });
 const Skills = dynamic(() => import('@/components/sections/skills'), { ssr: false });
 const Certifications = dynamic(() => import('@/components/sections/certifications'), { ssr: false });
 const AboutSection = dynamic(() => import('@/components/sections/about'), { ssr: false });
@@ -15,7 +15,7 @@ export default function Home(){
         <HomeSection/>
         <AboutSection/>
         <Skills/>
-        <ProjectsSection/>
+        <RecentProjectsSection/>
         <Certifications/>
         <ContactSection/>
        

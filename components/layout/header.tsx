@@ -23,7 +23,7 @@ import {cn} from "@/lib/utils";
                     "relative h-full w-fit lg:min-w-40 border-x flex items-center justify-start gap-2 text-muted-foreground px-3",
                     "hover:bg-muted transition-colors duration-200 ease-in-out",
                     isActive && "text-foreground bg-background",
-                    item.isRight && "ml-auto"
+                    item.isRight && "ml-auto hidden lg:inline-flex"
                   )}>
                   <item.icon size={14} className="text-primary-foreground" />
                   <span className="hidden lg:text-base lg:inline md:text-xs">{item.name}</span> {isActive && <BorderActive />}

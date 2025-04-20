@@ -60,7 +60,7 @@ export default function HomeSection(){
                 <div className="space-x-4">
                 <Button
                     onClick={() => {
-                    router.push("#projects");
+                    router.push("/projects");
                     }}
                     variant="gradientOutline"
                 >
