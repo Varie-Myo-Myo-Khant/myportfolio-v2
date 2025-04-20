@@ -8,7 +8,13 @@ import { notFound } from "next/navigation";
 import {FolderArchiveIcon, Github, ExternalLinkIcon } from "lucide-react";
 import { motion } from "framer-motion";
 
-export default function ProjectDetail({ params }: { params: { id: string } }) {
+type Props = {
+  params: {
+    id: string;
+  };
+};
+
+export default function ProjectDetail({ params }: Props) {
   const project = data.projects.projects.find(
     (p) => p.id.toString() === params.id
   );
