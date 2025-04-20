@@ -70,7 +70,7 @@ export default function Certifications() {
               alt={openCert.name}
               width={800}
               height={600}
-              className="object-contain w-full h-auto p-4"
+              className="object-contain w-full max-h-96 p-4"
             />
             
           </div>

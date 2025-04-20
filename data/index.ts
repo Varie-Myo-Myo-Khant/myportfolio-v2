@@ -291,26 +291,94 @@ const data = {
     email: "myokhant12021@gmail.com",
     name: "Myo Myo Khant",
   },
-   certifications :{
-    lists: [
-    {
-      name: "AWS Certified Solutions Architect – Associate",
-      src: "/img/test.png",
-    },
-    {
-      name: "HackerRank Python (Intermediate) Certificate",
-      src: "/img/demo.png",
-    },
-    {
-      name: "Google Cloud Fundamentals",
-      src: "/img/demo.png",
-    },
-    {
-      name: "Docker Certified Associate",
-      src: "/img/demo.png",
-    },
-  ]
-   } ,
+   "certifications": {
+    "lists": [
+      {
+        "name": "Android App Components",
+        "src": "/img/certificates/android.jpeg"
+      },
+      {
+        "name": "Django Web Framework",
+        "src": "/img/certificates/django.jpeg"
+      },
+      {
+        "name": "Fundamental IT Engineer Certification",
+        "src": "/img/certificates/fe.png"
+      },
+      {
+        "name": "Building mobile app with Google Sheets on Glide",
+        "src": "/img/certificates/google-slide.jpeg"
+      },
+      {
+        "name": "Human Computer Interaction",
+        "src": "/img/certificates/hci.png"
+      },
+      {
+        "name": "IT Professional",
+        "src": "/img/certificates/ip.png"
+      },
+      {
+        "name": "Java FullStack Developer",
+        "src": "/img/certificates/java-fullstack.jpeg"
+      },
+      {
+        "name": "Programming with JavaScript",
+        "src": "/img/certificates/javascript.jpeg"
+      },
+      {
+        "name": "Maker Mentoring K-Lab",
+        "src": "/img/certificates/klab-maker.png"
+      },
+      {
+        "name": "Mastering Laravel Framework and PHP",
+        "src": "/img/certificates/laravel.jpeg"
+      },
+      {
+        "name": "Command Line in Linux",
+        "src": "/img/certificates/linux.jpeg"
+      },
+      {
+        "name": "MCPA Academic Excellence Award",
+        "src": "/img/certificates/mcpa-academic.png"
+      },
+      {
+        "name": "Meta Back-End Developer",
+        "src": "/img/certificates/meta-backend.jpeg"
+      },
+      {
+        "name": "Meta Front-End Developer",
+        "src": "/img/certificates/meta-frontend.jpeg"
+      },
+      {
+        "name": "Introduction to Next.js",
+        "src": "/img/certificates/nextjs.jpeg"
+      },
+      {
+        "name": "Developing Backend Apps with Node.js and Express",
+        "src": "/img/certificates/nodejs.jpeg"
+      },
+      {
+        "name": "Building Web Applications in PHP",
+        "src": "/img/certificates/php.png"
+      },
+      {
+        "name": "Python for Everybody",
+        "src": "/img/certificates/python.jpeg"
+      },
+      {
+        "name": "Understanding Research Methods",
+        "src": "/img/certificates/research.jpeg"
+      },
+      {
+        "name": "Version Control",
+        "src": "/img/certificates/version-control.jpeg"
+      },
+      {
+        "name": "Web Essentials",
+        "src": "/img/certificates/web-essential.png"
+      }
+    ]
+  },
     highlights :[
     { title: "Fullstack Development", Icon: Code },
     { title: "AI Integration", Icon: Cpu },
