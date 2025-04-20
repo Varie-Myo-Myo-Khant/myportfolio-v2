@@ -87,7 +87,7 @@ const data = {
         "year": 2025,
         "confidential": true,
         "category": "Freelance",
-        "role": "Backend",
+        "role": "Full Stack, AI Integration",
         "flowchart": "",
         "details": "Designed and implemented a conversational AI chatbot that delivers personalized food suggestions using LangChain and RAG (Retrieval-Augmented Generation). Integrated with Facebook Messenger, the bot uses Milvus vector search to retrieve contextually relevant data. Developed backend APIs with Django, and managed persona matching logic and OpenAI integrations. Enhanced user engagement and offered intelligent interaction for better nutritional awareness."
       },
@@ -102,7 +102,7 @@ const data = {
         "year": 2024,
         "confidential": true,
         "category": "Work",
-        "role": "Full Stack",
+        "role": "Full Stack, Team lead, AI Integration, Project Analyst",
         "flowchart": "",
         "details": "Developed a personalized activity scheduling system that matches elderly users to daily routines based on persona clustering and semantic similarity. The backend leverages Django, Milvus, and LLM-based RAG for contextual recommendations, while the frontend was built using Next.js for a dynamic and accessible interface. The system significantly improved user engagement and reduced manual caregiver effort. The project also involved persona-based vector retrieval, user feedback collection, and real-time data syncing."
       },
@@ -117,7 +117,7 @@ const data = {
         "year": 2024,
         "confidential": true,
         "category": "Work",
-        "role": "Backend",
+        "role": "Full Stack",
         "flowchart": "",
         "details": "Led backend development of a telecom management system for a major broadband provider, enabling subscription control, B2B sales processing, user access management, and customer complaint resolution. Built using Laravel and MySQL, the system supported multi-role dashboards, real-time SLA monitoring, and workflow automation. Improved service response time and reduced manual overhead through smart queue and notification features."
       },
@@ -221,7 +221,7 @@ const data = {
         "techstack": ["Python", "OpenCV", "Voice Recognition", "Raspberry Pi", "Google Assistant API"],
         "year": 2020,
         "confidential": false,
-        "category": "Personal",
+        "category": "Freelance",
         "role": "Embedded Developer",
         "flowchart": "",
         "details": "Created a security automation system using Raspberry Pi that unlocks doors via voice commands and facial recognition. Integrated OpenCV for real-time face detection and Google Assistant API for voice control. Enhanced smart home safety using biometric identification."
@@ -251,7 +251,7 @@ const data = {
         "techstack": ["C", "Arduino", "3D Modeling", "2D Design"],
         "year": 2020,
         "confidential": false,
-        "category": "Personal",
+        "category": "Freelance",
         "role": "Embedded Developer",
         "flowchart": "",
         "details": "Developed a smart robotic car for academic competition using Arduino. Programmed autonomous navigation with obstacle avoidance. Designed the chassis using 3D modeling tools and documented sensor logic using 2D schematic diagrams. The project placed second in a regional robotics challenge."
@@ -266,7 +266,7 @@ const data = {
         "techstack": ["Java", "MySQL"],
         "year": 2021,
         "confidential": false,
-        "category": "Personal",
+        "category": "Freelance",
         "role": "Backend / Desktop Developer",
         "flowchart": "",
         "details": "Built a Java-based university search tool allowing students to find institutions by location, specialization, and admission criteria. Designed and implemented a local MySQL database to handle search queries efficiently. Focused on usability and local language support to improve accessibility for Myanmar students."
@@ -281,7 +281,7 @@ const data = {
         "techstack": ["JavaScript", "HTML", "CSS", "Bootstrap"],
         "year": 2021,
         "confidential": false,
-        "category": "Personal",
+        "category": "Freelance",
         "role": "Frontend Developer",
         "flowchart": "",
         "details": "Created a static website featuring attractions, cultural insights, and local businesses in Yangon. Designed with mobile responsiveness in mind using Bootstrap and custom CSS. Aimed at tourists and newcomers to easily navigate the city and find useful resources."
@@ -296,7 +296,7 @@ const data = {
         "techstack": ["C", "Arduino", "2D Design"],
         "year": 2020,
         "confidential": false,
-        "category": "Personal",
+        "category": "Freelance",
         "role": "Embedded Developer",
         "flowchart": "",
         "details": "Engineered an Arduino-controlled robot that autonomously collects waste using IR sensors and mechanical arms. Created 2D blueprints for mechanical layout and wiring diagrams. Designed as a prototype to promote environmental awareness in schools."
@@ -311,7 +311,7 @@ const data = {
         "techstack": ["C", "Arduino", "2D Design", "Hardware Design"],
         "year": 2018,
         "confidential": false,
-        "category": "Personal",
+        "category": "Freelance",
         "role": "Embedded Developer",
         "flowchart": "",
         "details": "Built a CNC-inspired drawing machine capable of converting digital paths into physical sketches. Used Arduino microcontrollers to control servo motors and draw on paper with precise movements. Included hand-crafted mechanical parts and hand-soldered circuits. The project was part of a Maker mentoring initiative."
@@ -326,7 +326,7 @@ const data = {
         "techstack": ["PHP", "Bootstrap", "MySQL", "HTML"],
         "year": 2019,
         "confidential": false,
-        "category": "Personal",
+        "category": "Freelance",
         "role": "Full Stack",
         "flowchart": "",
         "details": "Developed a PHP-based platform to manage ferry operations including driver and passenger assignment, live ferry status updates, and SMS notifications. The system supported real-time coordination and ticket handling, helping streamline ferry management for local operators."
@@ -341,7 +341,7 @@ const data = {
         "techstack": ["C++"],
         "year": 2020,
         "confidential": false,
-        "category": "Personal",
+        "category": "Freelance",
         "role": "Desktop Developer",
         "flowchart": "",
         "details": "Designed a basic yet functional library management system using C++ with file handling to manage book checkouts, user records, and due tracking. Built with an emphasis on user-friendly input and clean menu-driven interfaces, suitable for small libraries or academic demos."

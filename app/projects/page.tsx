@@ -7,7 +7,7 @@ const LaptopAnimation = dynamic(() => import("@/components/sections/recent-proje
 const ProjectCard = dynamic(() => import("@/components/sections/recent-projects/project-card"), { ssr: false });
 import data from "@/data";
 
-const FILTERS = ["All", "Work", "Freelance", "Personal"];
+const FILTERS = ["All", "Work", "Freelance"];
 
 export default function ProjectPage() {
   const [activeFilter, setActiveFilter] = useState("All");
