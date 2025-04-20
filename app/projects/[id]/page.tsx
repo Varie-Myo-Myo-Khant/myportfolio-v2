@@ -7,7 +7,7 @@ import { notFound } from "next/navigation";
 import {FolderArchiveIcon, Github, ExternalLinkIcon } from "lucide-react";
 import { motion } from "framer-motion";
 
-type paramsId = Promise<{ id: number }>;
+type paramsId = Promise<{ id: string }>;
 
 export default async function ProjectDetail(props:{params:paramsId}) { 
   const { id } = await props.params;
