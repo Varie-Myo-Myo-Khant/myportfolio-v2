@@ -15,7 +15,7 @@ export default async function ProjectDetail(props:{params:paramsId}) {
 
   if (!project) return notFound();
 
-  const fallbackImage = "/img/test.png";
+  const fallbackImage = "/img/demo.png";
 
   const techBadge = (tech: string) => {
     const badgeMap: Record<string, string> = {
@@ -24,10 +24,41 @@ export default async function ProjectDetail(props:{params:paramsId}) {
       "Laravel": "https://img.shields.io/badge/Laravel-E74430?style=flat&logo=laravel&logoColor=white",
       "Django": "https://img.shields.io/badge/Django-092E20?style=flat&logo=django&logoColor=white",
       "Node.js": "https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white",
-      "Next.js": "https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white",
+      "Next.js": "https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white",
       "Milvus": "https://img.shields.io/badge/Milvus-20B8C5?style=flat&logo=milvus&logoColor=white",
-      "LLMs": "https://img.shields.io/badge/LLMs-663399?style=flat&logo=OpenAI&logoColor=white"
+      "LLMs": "https://img.shields.io/badge/LLMs-663399?style=flat&logo=openai&logoColor=white",
+      "Python": "https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white",
+      "MySQL": "https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white",
+      "PostgreSQL": "https://img.shields.io/badge/PostgreSQL-336791?style=flat&logo=postgresql&logoColor=white",
+      "MongoDB": "https://img.shields.io/badge/MongoDB-47A248?style=flat&logo=mongodb&logoColor=white",
+      "Java": "https://img.shields.io/badge/Java-007396?style=flat&logo=java&logoColor=white",
+      "Spring Boot": "https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat&logo=springboot&logoColor=white",
+      "React": "https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black",
+      "Redux": "https://img.shields.io/badge/Redux-764ABC?style=flat&logo=redux&logoColor=white",
+      "JavaScript": "https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black",
+      "Vue.js": "https://img.shields.io/badge/Vue.js-4FC08D?style=flat&logo=vuedotjs&logoColor=white",
+      "HTML": "https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white",
+      "CSS": "https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white",
+      "Bootstrap": "https://img.shields.io/badge/Bootstrap-7952B3?style=flat&logo=bootstrap&logoColor=white",
+      "C++": "https://img.shields.io/badge/C++-00599C?style=flat&logo=cplusplus&logoColor=white",
+      "C": "https://img.shields.io/badge/C-A8B9CC?style=flat&logo=c&logoColor=black",
+      "OpenCV": "https://img.shields.io/badge/OpenCV-5C3EE8?style=flat&logo=opencv&logoColor=white",
+      "Arduino": "https://img.shields.io/badge/Arduino-00979D?style=flat&logo=arduino&logoColor=white",
+      "Tkinter": "https://img.shields.io/badge/Tkinter-FFDD44?style=flat&logo=python&logoColor=black",
+      "Apache PySpark": "https://img.shields.io/badge/PySpark-E25A1C?style=flat&logo=apachespark&logoColor=white",
+      "Socket.io": "https://img.shields.io/badge/Socket.io-010101?style=flat&logo=socket.io&logoColor=white",
+      "Raspberry Pi": "https://img.shields.io/badge/Raspberry%20Pi-C51A4A?style=flat&logo=raspberrypi&logoColor=white",
+      "Google Assistant API": "https://img.shields.io/badge/Google%20Assistant-4285F4?style=flat&logo=googleassistant&logoColor=white",
+      "OpenAI API": "https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white",
+      "Messenger API": "https://img.shields.io/badge/Messenger-0084FF?style=flat&logo=messenger&logoColor=white",
+      "Voice Recognition": "https://img.shields.io/badge/Voice%20Recognition-333333?style=flat&logo=googlevoice&logoColor=white",
+      "Face Recognition": "https://img.shields.io/badge/Face%20Recognition-303F9F?style=flat&logo=faceplusplus&logoColor=white",
+      "RAG": "https://img.shields.io/badge/RAG-9146FF?style=flat&logo=openai&logoColor=white",
+      "LangChain": "https://img.shields.io/badge/LangChain-00B4D8?style=flat&logo=langchain&logoColor=white",
+      "2D Design": "https://img.shields.io/badge/2D%20Design-555555?style=flat&logo=sketch&logoColor=white",
+      "3D Modeling": "https://img.shields.io/badge/3D%20Modeling-FF6F00?style=flat&logo=blender&logoColor=white"
     };
+    
     return badgeMap[tech] || `https://img.shields.io/badge/${tech.replace(/ /g, "%20")}-gray?style=flat`;
   };
 
@@ -41,7 +72,7 @@ export default async function ProjectDetail(props:{params:paramsId}) {
       </div>
 
       {/* Title */}
-      <h1 className="text-center text-2xl md:text-5xl mb-8">
+      <h1 className="text-center text-2xl md:text-5xl my-8">
         <span className="text-gradient-primary">{"-{ "}</span>
         {project.title}
         <span className="text-gradient-primary">{" }-"}</span>
@@ -98,7 +129,7 @@ export default async function ProjectDetail(props:{params:paramsId}) {
                 )}
 
                 {/* Links */}
-                <div>
+                {(project.sourcelink || project.livelink)&& ( <div>
                   <h3 className="font-semibold text-primary-foreground mb-2">Links</h3>
                   <div className="flex gap-4 text-lg">
                     {project.sourcelink && (
@@ -124,7 +155,7 @@ export default async function ProjectDetail(props:{params:paramsId}) {
                       </a>
                     )}
                   </div>
-                </div>
+                </div>)}
                
                 {project.role && (
                   <div>
