@@ -25,7 +25,7 @@ export default function ProjectCard({ project }: props) {
   const { data: session } = useSession(); // Assuming you are using NextAuth for user session
   const [password, setPassword] = useState(""); // State for password input
   const router=useRouter();
-  const [showPasswordForm, setShowPasswordForm] = useState<{id:number} | null>(null);// State to toggle password form visibility
+  const [showPasswordForm, setShowPasswordForm] = useState<{id:string} | null>(null);// State to toggle password form visibility
   const [passwordError, setPasswordError] = useState(""); // State to hold error message for incorrect password
 
   // Handle password submission
@@ -78,7 +78,7 @@ export default function ProjectCard({ project }: props) {
                 {/* If password is not entered correctly, show the Enter Password button */}
                 <Button className="text-xs"
                   variant="gradientDefault"
-                  onClick={() => setShowPasswordForm(project.id)}
+                  onClick={() => setShowPasswordForm(project.id.toString())}
                 >
                   Require Crendentials to View
                 </Button>
