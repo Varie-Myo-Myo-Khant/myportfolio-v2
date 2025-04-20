@@ -7,13 +7,11 @@ import { notFound } from "next/navigation";
 import {FolderArchiveIcon, Github, ExternalLinkIcon } from "lucide-react";
 import { motion } from "framer-motion";
 
-type props={
-  params:{
-    id:number;
-  }
-}
-export default function ProjectDetail({ params }: props) { 
-  const project = data.projects.projects.find((p) => (p.id) === parseInt(params.id));
+type paramsId = Promise<{ id: number }>;
+
+export default async function ProjectDetail(props:{params:paramsId}) { 
+  const { id } = await props.params;
+  const project = data.projects.projects.find((p) => (p.id) === id);
 
   if (!project) return notFound();
 
