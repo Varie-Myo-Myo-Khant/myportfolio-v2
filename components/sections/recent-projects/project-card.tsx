@@ -16,6 +16,7 @@ type props = {
     image: string;
     sourcelink: string;
     techstack: string[];
+    category:string;
     year:number;
     confidential: boolean; // Field to indicate if the project is confidential
   };

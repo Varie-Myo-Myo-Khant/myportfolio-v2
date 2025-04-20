@@ -11,7 +11,7 @@ type paramsId = Promise<{ id: number }>;
 
 export default async function ProjectDetail(props:{params:paramsId}) { 
   const { id } = await props.params;
-  const project = data.projects.projects.find((p) => (p.id) === id);
+  const project = data.projects.projects.find((p) => (p.id) === parseInt(id));
 
   if (!project) return notFound();
 
