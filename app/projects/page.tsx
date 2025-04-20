@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { SessionProvider } from "next-auth/react";
-import LaptopAnimation from "@/components/sections/projects/laptop-animation";
-import ProjectCard from "@/components/sections/projects/project-card";
+import LaptopAnimation from "@/components/sections/recent-projects/laptop-animation";
+import ProjectCard from "@/components/sections/recent-projects/project-card";
 import data from "@/data";
 
 const FILTERS = ["All", "Work", "Freelance", "Personal"];
@@ -18,7 +18,7 @@ export default function ProjectPage() {
 
   return (
     <div className="w-full py-12 px-6 container text-sm md:text-base">
-      <div className="text-center relative mb-16">
+      <div className="text-center relative mb-8">
         <Image
           className="absolute top-2 -z-10 text-transparent opacity-30 w-full h-full object-cover"
           src="/img/grid.svg"
@@ -39,15 +39,15 @@ export default function ProjectPage() {
       </div>
       
       {/* Filter Buttons */}
-      <div className="flex flex-wrap gap-3 justify-center  mb-10">
+      <div className="flex flex-wrap gap-3 justify-center  mb-16">
         {FILTERS.map((filter) => (
           <button
             key={filter}
             onClick={() => setActiveFilter(filter)}
-            className={`px-4 py-2 rounded-full border ${
+            className={`px-4 py-2  border ${
               activeFilter === filter
-                ? "bg-gradient-to-r from-purple-500 to-cyan-500 text-white"
-                : "bg-transparent text-gray-600 hover:text-white border-gray-300"
+                ? "bg-gradient-primary -gradient-primary"
+                : "bg-transparent border-gradient-primary hover:bg-gradient-primary hover:-gradient-primary"
             } transition-all`}
           >
             {filter}

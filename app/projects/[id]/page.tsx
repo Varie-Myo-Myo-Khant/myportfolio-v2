@@ -5,7 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import data from "@/data";
 import { notFound } from "next/navigation";
-import { Github, ExternalLinkIcon } from "lucide-react";
+import {FolderArchiveIcon, Github, ExternalLinkIcon } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function ProjectDetail({ params }: { params: { id: string } }) {
   const project = data.projects.projects.find(
@@ -34,119 +35,132 @@ export default function ProjectDetail({ params }: { params: { id: string } }) {
     <div className="container mx-auto px-6 py-12 flex flex-col items-center">
       {/* Back Button */}
       <div className="w-full mb-6">
-        <Link href="/#projects" className="text-sm text-primary hover:underline">
+        <Link href="/projects" className="text-sm text-primary-foreground hover:underline">
           ← Back to Projects
         </Link>
       </div>
 
       {/* Title */}
-      <h1 className="text-center text-2xl md:text-5xl mb-2">
+      <h1 className="text-center text-2xl md:text-5xl mb-8">
         <span className="text-gradient-primary">{"-{ "}</span>
         {project.title}
         <span className="text-gradient-primary">{" }-"}</span>
       </h1>
 
-      {/* Short Description under title */}
+      
       {project.description && (
-        <p className="text-center text-muted-foreground text-sm md:text-base max-w-2xl mb-10">
+        <p className="text-center text-muted-foreground text-sm md:text-base max-w-3xl mb-16">
           {project.description}
         </p>
       )}
 
-      {/* Image + Info Section */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mb-12">
-        {/* Left (2/3) - Image */}
-        <div className="relative md:col-span-2">
-          <Image
-            src={project.image || fallbackImage}
-            alt={project.title}
-            width={1000}
-            height={600}
-            className="rounded-2xl shadow-xl border-[4px] border-muted object-contain w-full"
-          />
-          {project.livelink && (
-            <a
-              href={project.livelink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="absolute bottom-4 right-4 bg-primary text-white px-4 py-2 text-sm rounded-lg shadow hover:bg-primary/90 transition"
-            >
-              Live Demo
-            </a>
-          )}
-        </div>
-
-        {/* Right (1/3) - Info Section */}
-        <div className="flex flex-col justify-between gap-6">
-          {/* Project Type */}
-          {project.category && (
-            <div>
-              <h3 className="font-semibold text-primary-foreground mb-2">Project Type</h3>
-              <p className="text-muted-foreground text-sm">{project.category}</p>
+      <motion.div layout className="w-full h-fit p-4 rounded-xl bg-muted border overflow-hidden">
+            <div className="flex justify-between flex-shrink-0 mb-2">
+              <div className="flex items-center gap-2 text-muted-foreground">
+                <FolderArchiveIcon size={18} />
+                <span className="hidden md:inline">{project.title}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="block rounded-full size-3 bg-green-500 ml-auto" />
+                <span className="block rounded-full size-3 bg-yellow-500" />
+                <span className="block rounded-full size-3 bg-red-500 " />
+              </div>
             </div>
-          )}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mb-8">
+              <div className="relative md:col-span-2">
+                <Image
+                  src={project.image || fallbackImage}
+                  alt={project.title}
+                  width={1000}
+                  height={600}
+                  className="rounded-xl shadow-xl border-[4px] border-muted object-contain w-full"
+                />
+              </div>
 
-          {/* My Role */}
-          {project.role && (
-            <div>
-              <h3 className="font-semibold text-primary-foreground mb-2">My Role</h3>
-              <p className="text-muted-foreground text-sm">{project.role}</p>
+              {/* Right (1/3) - Info Section */}
+              <div className="flex flex-col  gap-4">
+
+              <div>
+                  <h3 className="font-semibold text-primary-foreground mb-2">Tech Stack</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {project.techstack.map((tech, idx) => (
+                      <img key={idx} src={techBadge(tech)} alt={tech} className="h-6" />
+                    ))}
+                  </div>
+                </div>
+
+                {/* Project Type */}
+                {project.category && (
+                  <div>
+                    <h3 className="font-semibold text-primary-foreground mb-2">Project Type</h3>
+                    <p className="text-muted-foreground text-sm">{project.category}</p>
+                  </div>
+                )}
+
+                {/* Links */}
+                <div>
+                  <h3 className="font-semibold text-primary-foreground mb-2">Links</h3>
+                  <div className="flex gap-4 text-lg">
+                    {project.sourcelink && (
+                      <a
+                        href={project.sourcelink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary/80"
+                        title="Source Code"
+                      >
+                        <Github />
+                      </a>
+                    )}
+                    {project.livelink && (
+                      <a
+                        href={project.livelink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary/80"
+                        title="Live Demo"
+                      >
+                        <ExternalLinkIcon />
+                      </a>
+                    )}
+                  </div>
+                </div>
+               
+                {project.role && (
+                  <div>
+                    <h3 className="font-semibold text-primary-foreground mb-2">My Role</h3>
+                    <p className="text-muted-foreground text-sm">{project.role}</p>
+                  </div>
+                )}
+                
+              </div>
             </div>
-          )}
 
-          {/* Links */}
-          <div>
-            <h3 className="font-semibold text-primary-foreground mb-2">Links</h3>
-            <div className="flex gap-4 text-lg">
-              {project.sourcelink && (
-                <a
-                  href={project.sourcelink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:text-primary/80"
-                  title="Source Code"
-                >
-                  <Github />
-                </a>
+            {/* Details / Description */}
+            {project.details && (
+              <div>
+                <h3 className="font-semibold text-primary-foreground mb-2">Project Description</h3>
+                <div className="text-muted-foreground text-sm md:text-base leading-relaxed text-justify indent-8">     
+                {project.details}
+                </div>
+                {/* Flowchart Section */}
+                {project.flowchart && (<div className="m-auto w-[80%] flex items-center max-w-4xl my-8">
+                  <Image
+                      src={project.flowchart || fallbackImage}
+                      alt={project.title}
+                      width={1000}
+                      height={600}
+                      className="object-contain w-full"
+                    />
+                </div>)}
+              </div>
               )}
-              {project.livelink && (
-                <a
-                  href={project.livelink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:text-primary/80"
-                  title="Live Demo"
-                >
-                  <ExternalLinkIcon />
-                </a>
-              )}
-            </div>
-          </div>
 
-          {/* Tech Stack */}
-          <div>
-            <h3 className="font-semibold text-primary-foreground mb-2">Tech Stack</h3>
-            <div className="flex flex-wrap gap-2">
-              {project.techstack.map((tech, idx) => (
-                <img key={idx} src={techBadge(tech)} alt={tech} className="h-6" />
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
+            
+      </motion.div>
+      
 
-      {/* Details / Description */}
-      {project.details && (<div className="max-w-3xl text-muted-foreground text-sm md:text-base leading-relaxed text-justify indent-8 mb-16">
-        {project.details}
-      </div>)}
-
-      {/* Flowchart Section */}
-      {project.flowchart && (<div className="w-full max-w-4xl">
-        <h2 className="text-2xl font-semibold mb-4 text-primary-foreground">Project Flow</h2>
-        <div className="w-full h-[300px] flex items-center justify-center border rounded-xl border-muted text-muted-foreground italic">
-          {project.flowchart}
-        </div>
-      </div>)}
+      
     </div>
   );
 }
