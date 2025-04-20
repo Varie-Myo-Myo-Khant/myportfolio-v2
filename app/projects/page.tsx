@@ -1,9 +1,10 @@
 "use client";
+import dynamic from 'next/dynamic';
 import React, { useState } from "react";
 import Image from "next/image";
 import { SessionProvider } from "next-auth/react";
-import LaptopAnimation from "@/components/sections/recent-projects/laptop-animation";
-import ProjectCard from "@/components/sections/recent-projects/project-card";
+const LaptopAnimation= dynamic(()=>import("@/components/sections/recent-projects/laptop-animation")) ;
+const ProjectCard =dynamic(()=>import("@/components/sections/recent-projects/project-card"));
 import data from "@/data";
 
 const FILTERS = ["All", "Work", "Freelance", "Personal"];
