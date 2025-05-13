@@ -56,9 +56,9 @@ export default function ProjectCard({ project }: props) {
           <span className="block rounded-full size-3 bg-red-500 " />
         </div>
       </div>
-      <div className="group relative h-[200px] overflow-hidden cursor-pointer rounded-lg m-2 border">
-        <Image className="size-full object-cover object-top" src={project.image || '/img/demo.png'} alt={project.title} width={400} height={400} />
-        <Link href="#" className="size-full bg-black/50 absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity" />
+      <div className="group relative bg-black h-[200px] overflow-hidden cursor-pointer rounded-lg m-2 border">
+        <Image className="size-full object-contain object-top" src={project.image || '/img/demo.gif'} alt={project.title} width={400} height={400} />
+        <Link href={project.sourcelink} target="_blank" className="size-full bg-black/50 absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity" />
         <ExternalLink size={24} className="absolute top-4 right-4 opacity-90 hidden group-hover:block" />
       </div>
       <div className="px-4 py-2 text-xs w-full">

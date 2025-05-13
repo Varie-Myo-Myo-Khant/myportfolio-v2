@@ -15,7 +15,7 @@ export default async function ProjectDetail(props:{params:paramsId}) {
 
   if (!project) return notFound();
 
-  const fallbackImage = "/img/demo.png";
+  const fallbackImage = "/img/demo.gif";
 
   const techBadge = (tech: string) => {
     const badgeMap: Record<string, string> = {
@@ -89,7 +89,7 @@ export default async function ProjectDetail(props:{params:paramsId}) {
             <div className="flex justify-between flex-shrink-0 mb-2">
               <div className="flex items-center gap-2 text-muted-foreground">
                 <FolderArchiveIcon size={18} />
-                <span className="hidden md:inline">{project.title}</span>
+                <span className="hidden md:inline">{project.title} - {project.year}</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="block rounded-full size-3 bg-green-500 ml-auto" />
@@ -98,13 +98,13 @@ export default async function ProjectDetail(props:{params:paramsId}) {
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mb-8">
-              <div className="relative md:col-span-2">
+              <div className="relative rounded-xl bg-black md:col-span-2">
                 <Image
-                  src={project.image || fallbackImage}
+                  src={fallbackImage}
                   alt={project.title}
                   width={1000}
-                  height={600}
-                  className="rounded-xl shadow-xl border-[4px] border-muted object-contain w-full"
+                  height={400}
+                  className="rounded-xl shadow-xl border-[4px] border-muted object-contain w-full h-[350px]"
                 />
               </div>
 
@@ -169,26 +169,45 @@ export default async function ProjectDetail(props:{params:paramsId}) {
 
             {/* Details / Description */}
             {project.details && (
-              <div>
-                <h3 className="font-semibold text-primary-foreground mb-2">Project Description</h3>
-                <div className="text-muted-foreground text-sm md:text-base leading-relaxed text-justify indent-8">     
-                {project.details}
-                </div>
-                {/* Flowchart Section */}
-                {project.flowchart && (<div className="m-auto w-[80%] flex items-center max-w-4xl my-8">
-                  <Image
-                      src={project.flowchart || fallbackImage}
-                      alt={project.title}
-                      width={1000}
-                      height={600}
-                      className="object-contain w-full"
-                    />
-                </div>)}
-              </div>
+              
+                <div
+                  className="project-content text-muted-foreground text-sm md:text-base leading-relaxed text-justify"
+                  dangerouslySetInnerHTML={{ __html: project.details }}
+                />
               )}
+             {/* Flowchart Section */}
+                {project.flowchart && project.flowchart.length>1 && (
+                  <div className="m-auto w-[80%] max-w-4xl my-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      {project.flowchart.map((img, idx) => (
+                        <Image
+                          src={img || fallbackImage}
+                          alt={project.title}
+                          width={1000}
+                          height={600}
+                          key={idx}
+                          className="object-cover w-[400px] h-[200px]"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                )}
 
-            
-      </motion.div>
+                  {project.video && (
+                  <div className="m-auto w-[80%] max-w-4xl my-8">
+                    <video
+                      autoPlay
+                      muted
+                      playsInline
+                      loop
+                      className="w-full max-h-[500px] rounded-lg shadow-md"
+                    >
+                      <source src={project.video} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                )}
+          </motion.div>
       
 
       

@@ -81,5 +81,18 @@
     border: 2px solid transparent;
     border-image: linear-gradient(to right, var(--gradient-primary)) 1;
   }
+
+  .project-content h2 {
+  @apply font-semibold text-primary-foreground mb-2;
+}
+
+.project-content p {
+  @apply indent-8 mb-4;
+}
+
+.project-content ul {
+  @apply ml-4 list-disc;
+}
+
 }
 
