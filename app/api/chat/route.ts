@@ -36,7 +36,7 @@ const createContextFromData = () => {
 
     Professional Work Experenice
     - 2020 to Present - Freelance Software Developer: Developed and deployed AI-driven applications, including chatbots, recommendation engines, and data analytics platforms, utilizing cloud technologies.
-    - 2024 to Present - Software Engineer | ATOM Myanmar: Developed scalable telecom solutions and B2B sales platforms, optimizing broadband systems and automating data workflows.
+    - 2024 to 2025 - Software Engineer | ATOM Myanmar: Developed scalable telecom solutions and B2B sales platforms, optimizing broadband systems and automating data workflows.
     - 2024 - ML Software Engineer | Mascot Pte Ltd, Myanmar: Led the development of an LLM-powered RAG recommendation system for personalized elderly activity planning.
     - 2022 to 2023 - Web Director | Digital Laboratory Myanmar: Developed and optimized 8+ websites, enhancing UX/UI, SEO performance, and engagement across multiple platforms.
     - 2020 to 2024 - IT Research Assistant: Led survey experiments comparing Generative AI tools and image-to-text systems, conducted ETL processes, and contributed to research papers published in IEEE.
