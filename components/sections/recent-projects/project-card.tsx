@@ -13,7 +13,7 @@ type props = {
     id: number;
     title: string;
     description: string;
-    image: string;
+    video: string;
     sourcelink: string;
     techstack: string[];
     category:string;
