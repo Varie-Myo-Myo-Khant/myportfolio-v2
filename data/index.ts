@@ -90,7 +90,7 @@ const data = {
         "role": "Full Stack, AI Integration",
         "flowchart": ["/img/projects/wf1.png", "/img/projects/wf2.png","/img/projects/wf3.png"],
        "details": "<h2>Overview</h2><p>Wordflow AI is an MVP-stage SaaS platform designed to assist users in generating, rewriting, translating, and managing brand-aligned content using advanced language models. It is tailored for content creators, marketers, and teams who want to streamline their writing workflow with AI assistance.</p><h2>Tech Stack & Architecture</h2><p>The application is built on the MERN stack (MongoDB, Express.js, React, Node.js) and deployed via Hostinger. It features AI integrations using OpenAI API, LangChain, and Retrieval-Augmented Generation (RAG) pipelines. Stripe is integrated for subscription billing, and key AI tools are wrapped in modular services for scalability and maintainability.</p><h2>My Contributions</h2><p>As a freelance full-stack and AI developer, I led the development of core features including AI Writer, Rewriter, Translator, and Brand Voice context integration. I developed CRUD APIs, handled file uploads and prompt engineering, implemented user experience enhancements, and established a scalable structure for future modules.</p><h2>Outcomes</h2><p>Wordflow AI is in its MVP phase and preparing for public release. The product is functionally complete for core features, with ongoing polishing and testing. My contributions have accelerated the platform's readiness for launch and set the foundation for future AI-powered innovations.</p>"
-      // },
+      },
       // {
       //   "id": 2,
       //   "title": "NextHub AI",
