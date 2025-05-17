@@ -90,22 +90,22 @@ const data = {
         "role": "Full Stack, AI Integration",
         "flowchart": ["/img/projects/wf1.png", "/img/projects/wf2.png","/img/projects/wf3.png"],
        "details": "<h2>Overview</h2><p>Wordflow AI is an MVP-stage SaaS platform designed to assist users in generating, rewriting, translating, and managing brand-aligned content using advanced language models. It is tailored for content creators, marketers, and teams who want to streamline their writing workflow with AI assistance.</p><h2>Tech Stack & Architecture</h2><p>The application is built on the MERN stack (MongoDB, Express.js, React, Node.js) and deployed via Hostinger. It features AI integrations using OpenAI API, LangChain, and Retrieval-Augmented Generation (RAG) pipelines. Stripe is integrated for subscription billing, and key AI tools are wrapped in modular services for scalability and maintainability.</p><h2>My Contributions</h2><p>As a freelance full-stack and AI developer, I led the development of core features including AI Writer, Rewriter, Translator, and Brand Voice context integration. I developed CRUD APIs, handled file uploads and prompt engineering, implemented user experience enhancements, and established a scalable structure for future modules.</p><h2>Outcomes</h2><p>Wordflow AI is in its MVP phase and preparing for public release. The product is functionally complete for core features, with ongoing polishing and testing. My contributions have accelerated the platform's readiness for launch and set the foundation for future AI-powered innovations.</p>"
-      },
-      {
-        "id": 2,
-        "title": "NextHub AI",
-        "description": "Supporting the development of an AI automation platform through web development and system integration efforts, with a focus on early-stage R&D.",
-        "video": "",
-        "livelink": "https://www.nexthub.ai/",
-        "sourcelink": "",
-        "techstack": ["Make.com", "N8N", "Webflow", "Custom Scripts", "AI Integration", "Automation R&D"],
-        "year": 2025,
-        "confidential": true,
-        "category": "Freelance",
-        "role": "Automation & Support Developer",
-        "flowchart": ["/img/projects/nh1.png","/img/projects/nh2.png"],
-        "details": "<h2>Overview</h2><p>NextHub AI is an emerging AI-powered automation platform focused on simplifying business workflows using low-code tools and intelligent integrations. Still in its early stages, the project aims to create an all-in-one solution for task automation, communication flows, and AI-assisted processes.</p><h2>Research & Technical Process</h2><p>My current focus includes technical research and prototype development for automation pipelines using tools like Make.com, N8N, and custom scripts. I am also contributing to the Webflow-based website setup and exploring integration strategies with AI services and communication platforms.</p><h2>My Contributions</h2><p>As a freelance developer, I’m involved in early-stage planning, AI integration exploration, and automation flow design. I assist in building foundational systems, evaluating tool compatibility, and experimenting with prototypes to guide development decisions.</p><h2>Outcomes</h2><p>The project is in stealth mode and currently in its R&D phase. Contributions so far have helped validate initial concepts, outline automation use cases, and establish a technical groundwork for future development and scaling.</p>"
-      },
+      // },
+      // {
+      //   "id": 2,
+      //   "title": "NextHub AI",
+      //   "description": "Supporting the development of an AI automation platform through web development and system integration efforts, with a focus on early-stage R&D.",
+      //   "video": "",
+      //   "livelink": "https://www.nexthub.ai/",
+      //   "sourcelink": "",
+      //   "techstack": ["Make.com", "N8N", "Webflow", "Custom Scripts", "AI Integration", "Automation R&D"],
+      //   "year": 2025,
+      //   "confidential": true,
+      //   "category": "Freelance",
+      //   "role": "Automation & Support Developer",
+      //   "flowchart": ["/img/projects/nh1.png","/img/projects/nh2.png"],
+      //   "details": "<h2>Overview</h2><p>NextHub AI is an emerging AI-powered automation platform focused on simplifying business workflows using low-code tools and intelligent integrations. Still in its early stages, the project aims to create an all-in-one solution for task automation, communication flows, and AI-assisted processes.</p><h2>Research & Technical Process</h2><p>My current focus includes technical research and prototype development for automation pipelines using tools like Make.com, N8N, and custom scripts. I am also contributing to the Webflow-based website setup and exploring integration strategies with AI services and communication platforms.</p><h2>My Contributions</h2><p>As a freelance developer, I’m involved in early-stage planning, AI integration exploration, and automation flow design. I assist in building foundational systems, evaluating tool compatibility, and experimenting with prototypes to guide development decisions.</p><h2>Outcomes</h2><p>The project is in stealth mode and currently in its R&D phase. Contributions so far have helped validate initial concepts, outline automation use cases, and establish a technical groundwork for future development and scaling.</p>"
+      // },
       {
         "id": 3,
         "title": "Food Buddy AI Chatbot",
